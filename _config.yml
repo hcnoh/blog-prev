@@ -1,5 +1,5 @@
 # Site settings
-title: HCNOH
+title: A Blog for HCNOH
 description: A blog for HCNOH
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hcnoh.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
