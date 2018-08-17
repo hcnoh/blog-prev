@@ -30,8 +30,6 @@ MobaXterm을 통해 업무용 서버로 접속한 모습
 
 Tmux 및 zshel, 그리고 vim의 config까지 미리 세팅된 dotfile을 가져와서 간단하게 바로 세팅할 수 있었다. 사용된 dotfiles는 다음의 링크에서 받을 수 있었다: [https://github.com/wookayin/dotfiles](https://github.com/wookayin/dotfiles)
 
-![image](/assets/img/20180817_03.png)
-
 One-liner (if, you trust):
 {% highlight bash %}
 curl -fsSL https://dotfiles.wook.kr/etc/install | bash
