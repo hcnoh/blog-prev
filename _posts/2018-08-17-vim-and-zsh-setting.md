@@ -7,6 +7,7 @@ description: 'Ubuntu 개발 환경에서 vim 및 zshell 세팅하는 방법 포�
 tags:
 - vim
 - zshell
+- Tmux
 categories:
 - Development
 twitter_text: '개발 환경 세팅 on Ubuntu'
@@ -36,6 +37,10 @@ Tmux 및 zshel, 그리고 vim의 config까지 미리 세팅된 dotfile을 가져
 ![image](/assets/img/20180817_04.png)
 
 설치가 무사히 끝난 상황이다.
+
+![image](/assets/img/20180817_05.png)
+
+exec zsh 명령을 통하여 zshell을 실행시킨 결과이다.
 
 {% highlight ruby %}
 # Site settings
