@@ -17,7 +17,7 @@ twitter_text: '개발 환경 세팅 on Ubuntu'
 ## MobaXterm 설치
 
 먼저 SSH 접속을 위한 터미널 툴인 MobaXterm을 설치하였다. 기존에는 Putty를 사용하였는데 bash shell이나 zshell을 커스터마이징을 하면 Putty는 그것을 예쁘게 잘 반영하지 못하는 듯 해서 MobaXterm으로 갈아탔다. 다운로드 링크는 다음과 같다: [https://mobaxterm.mobatek.net/](https://mobaxterm.mobatek.net/)
-![image](https://github.com/hcnoh/hcnoh.github.io/assets/img/20180817_01.png)
+![image](https://github.com/hcnoh/hcnoh.github.io/blob/master/assets/img/20180817_01.png)
 
 ## Site and User Settings
 
