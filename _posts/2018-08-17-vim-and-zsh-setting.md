@@ -48,7 +48,23 @@ cd ~/.dotfiles && python install.py
 
 ![image](/assets/img/20180817_05.png)
 
-exec zsh 명령을 통하여 zshell을 실행시킨 결과이다.
+'exec zsh' 명령을 통하여 zshell을 실행시킨 결과이다.
+
+## zshell 및 vim 세팅
+
+터미널을 재시작하니 여전히 zshell이 default가 아닌 상황. 일단 zshell을 default로 바꿔주기 위해서는 다음과 같이 하면 된다. 먼저 'dotfiles update' 멸령을 통하여 업데이트를 해준다.
+
+![image](/assets/img/20180817_06.png)
+
+![image](/assets/img/20180817_07.png)
+
+업데이트가 완료되었고 다음과 같이 표시가 된다.
+
+![image](/assets/img/20180817_08.png)
+
+터미널을 재시작하니 자동으로 zshell로 들어가지는 것을 확인할 수 있다.
+
+![image](/assets/img/20180817_09.png)
 
 {% highlight ruby %}
 # Site settings
