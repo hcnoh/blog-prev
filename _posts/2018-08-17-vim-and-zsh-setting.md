@@ -25,9 +25,17 @@ Home Edition을 다운받아도 큰 문제는 없을 것이다.
 
 MobaXterm을 통해 업무용 서버로 접속한 모습
 
-## Site and User Settings
+## dotfiles를 이용한 setting 가져오기
 
-You have to fill some informations on `_config.yml` to customize your site.
+Tmux 및 zshel, 그리고 vim의 config까지 미리 세팅된 dotfile을 가져와서 간단하게 바로 세팅할 수 있었다. 사용된 dotfiles는 다음의 링크에서 받을 수 있었다: [https://github.com/wookayin/dotfiles](https://github.com/wookayin/dotfiles)
+
+![image](/assets/img/20180817_03.png)
+
+위의 One-liner 명령어 만으로 한번에 설치가 가능하였다.
+
+![image](/assets/img/20180817_04.png)
+
+설치가 무사히 끝난 상황이다.
 
 {% highlight ruby %}
 # Site settings
