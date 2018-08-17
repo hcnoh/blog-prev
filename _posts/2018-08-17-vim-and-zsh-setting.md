@@ -66,76 +66,29 @@ cd ~/.dotfiles && python install.py
 
 ![image](/assets/img/20180817_09.png)
 
-{% highlight ruby %}
-# Site settings
-description: A blog about lorem ipsum dolor sit amet
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://localhost:3000" # the base hostname & protocol for your site 
+## 문제점 해결
 
-# User settings
-username: Lorem Ipsum
-user_description: Anon Developer at Lorem Ipsum Dolor
-user_title: Anon Developer
-email: anon@anon.com
-twitter_username: lorem_ipsum
-github_username:  lorem_ipsum
-gplus_username:  lorem_ipsum
-disqus_username: lorem_ipsum
-{% endhighlight %}
+sudo 권한이 없으면 설치가 안된다! 보통 sudo 권한 때문에 생기는 에러는 `~/.config` 내에서 `fsh` 디렉토리를 생성할 수 없다던가 또는 생성이 안되던가 하는 따위의 에러 메시지를 뱉어내곤 한다. 어쨌든 이런 경우에 `~/.config`의 접근 권한을 내 것으로 바꿔주면 무난히 해결이 가능하다.
 
-## Color customization
+Window 10 환경에서 MobaXterm을 활용하는 경우에 발생할 수 있는 문제는 vim 내에서 커서가 보이지 않는 경우이다.
 
-All color variables are in `src/styl/variable`. To change the main color, just set the new value at `main` assignment. Another colors are for texts and the code background color.
+![image](/assets/img/20180817_10.png)
 
-## Creating posts
+임시 방편으로 `set cursorcolumn`을 통하여 어느정도 해결하였으나 근본적인 해결은 될 수 없었다. 열심히 구글링해본 결과 다음과 같은 링크를 통해서 해결 방법을 찾아냈다: [https://www.reddit.com/r/vim/comments/4tu22w/set_termguicolors_makes_cursor_invisible/](https://www.reddit.com/r/vim/comments/4tu22w/set_termguicolors_makes_cursor_invisible/)
 
-You can use the `initpost.sh` to create your new posts. Just follow the command:
+링크에서는 `set termguicolors`가 원인이 될 수 있다고 하였다. `set termguicolors`을 검색을 통하여 찾아낸 결과
 
-{% highlight bash %}
-./initpost.sh -c Post Title
-{% endhighlight %}
+![image](/assets/img/20180817_11.png)
 
-The new file will be created at `_posts` with this format `date-title.md`.
+위의 부분을 발견하였고
 
-## Front-matter 
+![image](/assets/img/20180817_12.png)
 
-When you create a new post, you need to fill the post information in the front-matter, follow this example:
+위와 같이 맨 밑에 줄에 있는 `call s:auto_termcuicolors`를 주석처리 해주었다.
 
-{% highlight ruby %}
----
-layout: post
-title: "How to use"
-date: 2015-08-03 03:32:44
-image: '/assets/img/post-image.png'
-description: 'First steps to use this template'
-tags:
-- jekyll 
-- template 
-categories:
-- I love Jekyll
-twitter_text: 'How to install and use this template'
----
-{% endhighlight %}
+![image](/assets/img/20180817_13.png)
 
-
-## Running the blog in local
-
-In order to compile the assets and run Jekyll on local you need to follow those steps:
-
-- Install [NodeJS](https://nodejs.org/)
-- Run `npm install` 
-- Run `gulp`
-
-## Questions
-
-Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter [@willian_justen](https://twitter.com/willian_justen) or file a [GitHub Issue](https://github.com/willianjusten/will-jekyll-template/issues/new).
-
-## License
-
-This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.
-
-If you’d like to give me credit somewhere on your blog or tweet a shout out to [@willian_justen](https://twitter.com/willian_justen), that would be pretty sweet.
-
+결과적으로 위와 같이 무사히 해결할 수 있었다.
 
 
 
