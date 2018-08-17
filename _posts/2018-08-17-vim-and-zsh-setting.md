@@ -48,11 +48,11 @@ cd ~/.dotfiles && python install.py
 
 ![image](/assets/img/20180817_05.png)
 
-'exec zsh' 명령을 통하여 zshell을 실행시킨 결과이다.
+`exec zsh` 명령을 통하여 zshell을 실행시킨 결과이다.
 
 ## zshell 및 vim 세팅
 
-터미널을 재시작하니 여전히 zshell이 default가 아닌 상황. 일단 zshell을 default로 바꿔주기 위해서는 다음과 같이 하면 된다. 먼저 'dotfiles update' 멸령을 통하여 업데이트를 해준다.
+터미널을 재시작하니 여전히 zshell이 default가 아닌 상황. 일단 zshell을 default로 바꿔주기 위해서는 다음과 같이 하면 된다. 먼저 `dotfiles update` 명령을 통하여 업데이트를 해준다.
 
 ![image](/assets/img/20180817_06.png)
 
