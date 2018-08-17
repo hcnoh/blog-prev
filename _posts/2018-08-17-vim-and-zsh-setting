@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "How to use"
-date: 2015-08-03 03:32:44
+title: "개발 환경 세팅 on Ubuntu"
+date: 2018-08-17 23:29:31
 image: '/assets/img/'
-description: 'First steps to use this template'
+description: 'Ubuntu 개발 환경에서 vim 및 zshell 세팅하는 방법 포스팅'
 tags:
-- jekyll 
-- template 
+- vim
+- zshell
 categories:
-- I love Jekyll
-twitter_text: 'How to install and use this template'
+- Development
+twitter_text: '개발 환경 세팅 on Ubuntu'
 ---
 
 This is a simple and minimalist template for Jekyll designed for developers that want to write blog posts but don't want to care about frontend stuff.
