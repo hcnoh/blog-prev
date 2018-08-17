@@ -21,7 +21,7 @@ twitter_text: '개발 환경 세팅 on Ubuntu'
 Home Edition을 다운받아도 큰 문제는 없을 것이다.
 
 ![image](/assets/img/20180817_02.png)
-MobaXterm을 통해 업무용 서버로 접속한 
+MobaXterm을 통해 업무용 서버로 접속한 모습
 
 ## Site and User Settings
 
