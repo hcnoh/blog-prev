@@ -11,7 +11,7 @@ categories:
 twitter_text: 'Git 처음 사용하기'
 ---
 
-최근 시작한 프로젝트로 Google DeepMind의 WAVENET 논문을 구현 작업을 시작했다. 프로젝트 진행은 GitHub를 통하여 백업 및 버전 관리를 할 계획인데 오늘 코드 작업 결과물인 `model.py`를 GitHub에 업로드하기 위하여 Git을 처음 사용하였고, 처음 사용하며 느낀 어려웠던 점이나 팁같은 것들을 한 번 정리해 보았다.
+최근 시작한 프로젝트로 Google DeepMind의 WAVENET 논문을 구현하는 작업을 시작했다. 프로젝트 진행은 GitHub를 통하여 백업 및 버전 관리를 할 계획인데 오늘 코드 작업 결과물인 `model.py`를 GitHub에 업로드하기 위하여 Git을 처음 사용하였고, 처음 사용하며 느낀 어려웠던 점이나 팁같은 것들을 한 번 정리해 보았다.
 
 ## Git Config 설정
 
