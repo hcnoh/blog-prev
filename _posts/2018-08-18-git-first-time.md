@@ -47,14 +47,13 @@ git add .
 `git add 파일명` 이지만 `.` 하나를 찍어서 현재 디렉토리 전체 파일을 add할 수 있었다. 다시 push를 해보자.
 ![image](/assets/img/2018-08-18-git-first-time/04.png)
 에러 메시지를 검색해보니 다음 링크와 같은 팁을 확인할 수 있었다: [[link]](http://yjoo00.tistory.com/111)
-![image](/assets/img/2018-08-18-git-first-time/05.png)
 위 링크에 의하면 repo에 아직 commit을 한 적이 없기 때문에 원격 origin에 추가할 branch 또한 존재하지 않아서 발생한 에러라고 한다. 해결하기 위하여 다음의 명령어를 차례로 쳐보았다.
 {% highlight bash %}
 touch initial
 git add initial
 git commit -m "initial commit"
 {% endhighlight %}
-![image](/assets/img/2018-08-18-git-first-time/06.png)
+![image](/assets/img/2018-08-18-git-first-time/05.png)
 제대로 commit은 되는 것 같다. 그 다음 단계로
 {% highlight bash %}
 git push -u origin master
