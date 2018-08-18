@@ -41,11 +41,8 @@ cd ~/.dotfiles && python install.py
 {% endhighlight %}
 
 위의 One-liner 명령어 만으로 한번에 설치가 가능하였다.
-
 ![image](/assets/img/2018-08-17-development-environment-setting/20180817_04.png)
-
 설치가 무사히 끝난 상황이다.
-
 ![image](/assets/img/2018-08-17-development-environment-setting/20180817_05.png)
 
 `exec zsh` 명령을 통하여 zshell을 실행시킨 결과이다.
