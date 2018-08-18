@@ -39,14 +39,14 @@ git remote add origin https://github.com/hcnoh/wavenet.git
 `git remote -v` 명령을 통하여 제대로 로컬 저장소가 원격 origni에 연결되었는지 확인할 수 있다.
 바로 push를 해본다.
 ![image](/assets/img/2018-08-18-git-first-time/03.png)
-에러가 난다. 에러 메시지에서 추천해주는 명령어 역시 에러가 난다. 다음의 링크로부터 해결 방법을 찾아봤다: [링크](http://www.talkdev.net/git-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%82%AC%EC%9A%A9%EB%B2%95/)
+에러가 난다. 에러 메시지에서 추천해주는 명령어 역시 에러가 난다. 다음의 링크로부터 해결 방법을 찾아봤다: [[link]](http://www.talkdev.net/git-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%82%AC%EC%9A%A9%EB%B2%95/)
 먼저 `git add`를 해본다.
 {% highlight bash %}
 git add .
 {% endhighlight %}
 `git add 파일명` 이지만 `.` 하나를 찍어서 현재 디렉토리 전체 파일을 add할 수 있었다. 다시 push를 해보자.
 ![image](/assets/img/2018-08-18-git-first-time/04.png)
-에러 메시지를 검색해보니 다음 링크와 같은 팁을 확인할 수 있었다: [http://yjoo00.tistory.com/111](http://yjoo00.tistory.com/111)
+에러 메시지를 검색해보니 다음 링크와 같은 팁을 확인할 수 있었다: [[link]](http://yjoo00.tistory.com/111)
 ![image](/assets/img/2018-08-18-git-first-time/05.png)
 위 링크에 의하면 repo에 아직 commit을 한 적이 없기 때문에 원격 origin에 추가할 branch 또한 존재하지 않아서 발생한 에러라고 한다. 해결하기 위하여 다음의 명령어를 차례로 쳐보았다.
 {% highlight bash %}
