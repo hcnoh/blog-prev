@@ -3,11 +3,11 @@ layout: post
 title: "Ubuntu 개발 환경 세팅"
 date: 2018-08-17 23:29:31
 image: '/assets/img/'
-description: 'Ubuntu 개발 환경에서 vim, zshell 및 Tmux 세팅하는 방법 포스팅'
+description: 'Ubuntu 개발 환경에서 vim, zshell 및 tmux 세팅하는 방법 포스팅'
 tags:
 - vim
 - zshell
-- Tmux
+- tmux
 categories:
 - Development
 twitter_text: 'Ubuntu 개발 환경 세팅'
@@ -25,7 +25,7 @@ MobaXterm을 통해 업무용 서버로 접속한 모습
 
 ## dotfiles를 이용한 setting 가져오기
 
-Tmux 및 zshel, 그리고 vim의 config까지 미리 세팅된 dotfile을 가져와서 간단하게 바로 세팅할 수 있었다. 사용된 dotfiles는 다음의 링크에서 받을 수 있었다: [[link]](https://github.com/wookayin/dotfiles)
+tmux 및 zshel, 그리고 vim의 config까지 미리 세팅된 dotfile을 가져와서 간단하게 바로 세팅할 수 있었다. 사용된 dotfiles는 다음의 링크에서 받을 수 있었다: [[link]](https://github.com/wookayin/dotfiles)
 
 One-liner (if, you trust):
 {% highlight bash %}
