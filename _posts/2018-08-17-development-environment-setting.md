@@ -11,7 +11,6 @@ tags:
 categories:
 - Development
 twitter_text: 'Ubuntu 개발 환경 세팅'
-comments: true
 ---
 
 최근 업무용 개발 서버를 포맷하게 되었다. 따라서 개발용 세팅을 처음부터 다시 해야하는 상황. 세팅을 하며 어려웠던 점이나 팁같은 것들을 한 번 정리해 보았다.
