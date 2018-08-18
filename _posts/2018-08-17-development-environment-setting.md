@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "개발 환경 세팅 on Ubuntu"
+title: "Ubuntu 개발 환경 세팅"
 date: 2018-08-17 23:29:31
 image: '/assets/img/'
-description: 'Ubuntu 개발 환경에서 vim 및 zshell 세팅하는 방법 포스팅'
+description: 'Ubuntu 개발 환경에서 vim, zshell 및 Tmux 세팅하는 방법 포스팅'
 tags:
 - vim
 - zshell
 - Tmux
 categories:
 - Development
-twitter_text: '개발 환경 세팅 on Ubuntu'
+twitter_text: 'Ubuntu 개발 환경 '
 ---
 
 최근 업무용 개발 서버를 포맷하게 되었다. 따라서 개발용 세팅을 처음부터 다시 해야하는 상황. 세팅을 하며 어려웠던 점이나 팁같은 것들을 한 번 정리해 보았다.
