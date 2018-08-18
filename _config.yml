@@ -1,13 +1,13 @@
 # Site settings
-title: A Blog for HCNOH
-description: A blog for HCNOH
+title: HCNOH's blog
+description: HCNOH's blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hcnoh.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: HCNOH
 user_description: Deep Learning Researcher at TmaxData
-user_title: A blog for Hyungcheol Noh
+user_title: Hyungcheol's Blog
 email: rhc0624@gmail.com
 #twitter_username: lorem_ipsum
 github_username:  hcnoh
