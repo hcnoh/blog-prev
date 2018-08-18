@@ -39,7 +39,7 @@ git remote add origin https://github.com/hcnoh/wavenet.git
 `git remote -v` 명령을 통하여 제대로 로컬 저장소가 원격 origni에 연결되었는지 확인할 수 있다.
 바로 push를 해본다.
 ![image](/assets/img/2018-08-18-git-first-time/03.png)
-에러가 난다. 에러 메시지에서 추천해주는 명령어 역시 에러가 난다. 다음의 링크로부터 해결 방법을 찾아봤다: [http://www.talkdev.net/git-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%82%AC%EC%9A%A9%EB%B2%95/](http://www.talkdev.net/git-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%82%AC%EC%9A%A9%EB%B2%95/)
+에러가 난다. 에러 메시지에서 추천해주는 명령어 역시 에러가 난다. 다음의 링크로부터 해결 방법을 찾아봤다: [링크](http://www.talkdev.net/git-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%82%AC%EC%9A%A9%EB%B2%95/)
 먼저 `git add`를 해본다.
 {% highlight bash %}
 git add .
