@@ -27,5 +27,16 @@ git config user.name "hcnoh"
 그 다음으로는 먼저 GitHub 상에서 `wavenet`이라는 이름으로 repo를 하나 만들어 준다. 이 이름은 현재 작업중인 프로젝트의 디렉토리 이름과 같다는 점을 확인하자.
 현재 작업중인 디렉토리의 경로는 `~/wavenet`이다. 이 디렉토리 상에서 `git init` 명령을 통하여 이 디렉토리 `~/wavenet`이 로컬 git repository라고 선언한다.
 ![image](/assets/img/2018-08-18-git-first-time/01.png)
+초기화가 제대로 되었음을 확인할 수 있다.
 
 ## Push & Pull
+
+현재 `model.py`의 오늘 작업은 끝난 상황이라 바로 push를 해보려고 하였다. 로컬 저장소와 원격 origin을 연결하기 위하여 다음의 명령어를 사용하였다.
+{% highlight bash %}
+git remote add origin https://github.com/hcnoh/wavenet.git
+{% endhighlight %}
+![image](/assets/img/2018-08-18-git-first-time/02.png)
+`git remote -v` 명령을 통하여 제대로 로컬 저장소가 원격 origni에 연결되었는지 확인할 수 있다.
+바로 push를 해본다.
+![image](/assets/img/2018-08-18-git-first-time/03.png)
+
