@@ -54,4 +54,19 @@ touch initial
 git add initial
 git commit -m "initial commit"
 {% endhighlight %}
+![image](/assets/img/2018-08-18-git-first-time/06.png)
+제대로 commit은 되는 것 같다. 그 다음 단계로
+{% highlight bash %}
+git push -u origin master
+Username for 'https://github.com': hcnoh
+Password for 'https://hcnoh@github.com':
+{% endhighlight %}
+위의 명령을 실행하였으나
+![image](/assets/img/2018-08-18-git-first-time/07.png)
+또 에러가 발생하였다. 문제의 원인은 원격 origin 상에 있는 README.md 파일이었다. 이 파일이 로컬 저장소에는 없지만 원격 origin 상에 존재하기 때문에 이 에러가 발생한 것이다. 해결법은 다음과 같다. 먼저 push 전에 pull을 통하여 로컬에 없는 파일을 가져와 주고 push를 하면 되는 것이다.
+![image](/assets/img/2018-08-18-git-first-time/08.png)
+![image](/assets/img/2018-08-18-git-first-time/09.png)
+![image](/assets/img/2018-08-18-git-first-time/10.png)
+![image](/assets/img/2018-08-18-git-first-time/11.png)
+로컬 및 origin이 동기화가 제대로 된 것을 확인할 수 있다.
 
