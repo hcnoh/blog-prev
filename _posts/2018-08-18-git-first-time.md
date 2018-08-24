@@ -28,7 +28,7 @@ git config user.name "hcnoh"
 그 다음으로는 먼저 GitHub 상에서 `wavenet`이라는 이름으로 repo를 하나 만들어 준다. 이 이름은 현재 작업중인 프로젝트의 디렉토리 이름과 같다는 점을 확인하자.
 현재 작업중인 디렉토리의 경로는 `~/wavenet`이다. 이 디렉토리 상에서 `git init` 명령을 통하여 이 디렉토리 `~/wavenet`이 로컬 git repository라고 선언한다.
 ![image](/assets/img/2018-08-18-git-first-time/01.png)
-{% highlight bash %}
+{% highlight python %}
 >>> git init
 Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 {% endhighlight %}
