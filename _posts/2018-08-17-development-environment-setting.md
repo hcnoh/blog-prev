@@ -29,12 +29,12 @@ tmux 및 zshel, 그리고 vim의 config까지 미리 세팅된 dotfile을 가져
 
 One-liner (if, you trust):
 {% highlight bash %}
-curl -fsSL https://dotfiles.wook.kr/etc/install | bash
+>>> curl -fsSL https://dotfiles.wook.kr/etc/install | bash
 {% endhighlight %}
 An alternative:
 {% highlight bash %}
-git clone --recursive https://github.com/wookayin/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles && python install.py
+>>> git clone --recursive https://github.com/wookayin/dotfiles.git ~/.dotfiles
+>>> cd ~/.dotfiles && python install.py
 {% endhighlight %}
 위의 One-liner 명령어 만으로 한번에 설치가 가능하였다.
 ![image](/assets/img/2018-08-17-development-environment-setting/20180817_04.png)
