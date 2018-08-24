@@ -60,7 +60,10 @@ Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 {% highlight bash %}
 >>> git clone https://github.com/hcnoh/wavenet
 {% endhighlight %}
-이 명령을 통해서 현재 디렉토리에 `wavenet`이라는 디렉토리를 생성하여 그 안에 `.git` 디렉토리를 생성한다. 또한 repo의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 Checkout해 놓는다.
+이 명령을 통해서 현재 디렉토리에 `wavenet`이라는 디렉토리를 생성하여 그 안에 `.git` 디렉토리를 생성한다. 또한 repo의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 Checkout해 놓는다. 디렉토리의 이름을 `wavenet`이 아닌 다른 이름으로 설정하고 싶은 경우에는 다음의 명령을 타이핑하면 된다.
+{% highlight bash %}
+>>> git clone https://github.com/hcnoh/wavenet another_name
+{% endhighlight %}
 
 ## 작업 내용 추가
 add => commit => push
