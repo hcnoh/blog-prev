@@ -37,7 +37,7 @@ Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 ## Push & Pull
 
 현재 `model.py`의 오늘 작업은 끝난 상황이라 바로 push를 해보려고 하였다. 로컬 저장소와 원격 origin을 연결하기 위하여 다음의 명령어를 사용하였다.
-{% highlight bash %}
+{% highlight python %}
 git remote add origin https://github.com/hcnoh/wavenet.git
 {% endhighlight %}
 ![image](/assets/img/2018-08-18-git-first-time/02.png)
@@ -53,7 +53,7 @@ git add .
 ![image](/assets/img/2018-08-18-git-first-time/04.png)
 에러 메시지를 검색해보니 다음 링크와 같은 팁을 확인할 수 있었다: [[link]](http://yjoo00.tistory.com/111)
 위 링크에 의하면 repo에 아직 commit을 한 적이 없기 때문에 원격 origin에 추가할 branch 또한 존재하지 않아서 발생한 에러라고 한다. 해결하기 위하여 다음의 명령어를 차례로 쳐보았다.
-{% highlight bash %}
+{% highlight python %}
 touch initial
 git add initial
 git commit -m "initial commit"
