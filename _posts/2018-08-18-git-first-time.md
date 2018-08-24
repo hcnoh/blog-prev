@@ -17,8 +17,8 @@ twitter_text: 'Git 처음 사용하기'
 
 일단 Git은 설치가 되어있는 상황에서 시작한다. 먼저 Git에게 나의 정보를 알려주는 과정인 Config 설정을 시작해보자. 다음의 명령어를 사용하여 Config 설정을 끝내자.
 {% highlight bash %}
-git config user.email "rhc0624@gmail.com"
-git config user.name "hcnoh"
+>>> git config user.email "rhc0624@gmail.com"
+>>> git config user.name "hcnoh"
 {% endhighlight %}
 `git config -global user.name ~` 명령을 사용하여도 되지만 현재 공용 서버를 활용 중이라 global로 선언하지는 않는 걸로 하였다. 이 부분은 좀 헷갈려서 추후에 확인하고 기록하도록 하겠다.
 확인 결과 global로 선언하면 현재 repo뿐 아니라 이 계정에서 생성하는 모든 repo의 config가 설정되는 것으로 파악하였다.
@@ -54,7 +54,7 @@ To push the current branch and set the remote as upstream, use
 에러가 난다. 에러 메시지에서 추천해주는 명령어 역시 에러가 난다. 다음의 [링크](http://www.talkdev.net/git-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%82%AC%EC%9A%A9%EB%B2%95/)로부터 해결 방법을 찾아봤다.
 먼저 `git add`를 해본다.
 {% highlight bash %}
-git add .
+>>> git add .
 {% endhighlight %}
 `git add 파일명` 이지만 `.` 하나를 찍어서 현재 디렉토리 전체 파일을 add할 수 있었다. 다시 push를 해보자.
 {% highlight bash %}
@@ -69,19 +69,28 @@ error: failed to push some refs to 'https://github.com/hcnoh/wavenet.git'
 >>> git add initial
 >>> git commit -m "initial commit"
 [master (root-commit) fa9e359] initial commit
-2files changed, 160 insertions(+)
-create mode 100644 initial
-create model 100644 model.py
+ 2 files changed, 160 insertions(+)
+ create mode 100644 initial
+ create model 100644 model.py
 {% endhighlight %}
-![image](/assets/img/2018-08-18-git-first-time/05.png)
 제대로 commit은 되는 것 같다. 그 다음 단계로
 {% highlight bash %}
-git push -u origin master
+>>> git push -u origin master
 Username for 'https://github.com': hcnoh
 Password for 'https://hcnoh@github.com':
 {% endhighlight %}
 위의 명령을 실행하였으나
 ![image](/assets/img/2018-08-18-git-first-time/07.png)
+{% highlight bash %}
+To https://github.com/hcnoh/wavenet.git
+ ! [rejected]       master -> master (fetch first)
+ error: failed to push some refs to 'https://github.com/hcnoh/wavenet.git'
+ hint: Updates were rejected because the remote contains work that you do
+ hint: not have locally. This is usually caused by another repository pushing
+ hint: to the same ref. You may want to first integrate the remote changes
+ hint: (e.g., 'git pull ...') before pushing again.
+ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+{% endhighlight %}
 또 에러가 발생하였다. 문제의 원인은 원격 origin 상에 있는 README.md 파일이었다. 이 파일이 로컬 저장소에는 없지만 원격 origin 상에 존재하기 때문에 이 에러가 발생한 것이다. 해결법은 다음과 같다. 먼저 push 전에 pull을 통하여 로컬에 없는 파일을 가져와 주고 push를 하면 되는 것이다.
 ![image](/assets/img/2018-08-18-git-first-time/08.png)
 ![image](/assets/img/2018-08-18-git-first-time/09.png)
