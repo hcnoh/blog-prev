@@ -34,8 +34,7 @@ Git 작업의 구성 요소는 크게 로컬 Repository와 온라인 Repository�
 여기서 이메일과 이름이 GitHub 계정을 생성할 때 사용한 정보들과 일치한다는 점을 기억하자. 이러한 config 설정을 통해 commit하는 과정에서 매번 저런 정보들을 타이핑할 필요가 없을 것이다.
 
 ## 온라인 Repository 생성
-Git으로 작업을 수행하기 위해서는 origin이 될 온라인 Repository의 생성이 선행되어야 한다. GitHub를 사용한다면 GitHub.com에 접속하여 `new repository page`로 들어가서 새로운 Repository를 생성한다. 일반적으로 Repository을 줄여서 repo라고 부른다.
-
+Git으로 작업을 수행하기 위해서는 origin이 될 온라인 Repository의 생성이 선행되어야 한다. GitHub를 사용한다면 GitHub.com에 접속하여 `new repository page`로 들어가서 새로운 Repository를 생성한다. 일반적으로 Repository을 줄여서 repo라고 부른다.  
 `Initialize this repository with a README.`는 체크해도 되고 하지 않아도 된다. 큰 상관은 없다. 다만 처음 생성하는 경우에는 연습삼아서 체크해 보는 것이 좋을 것이다. 체크를 하고 repo를 생성하면 repo 내에 `Readme.md`파일이 같이 생성된다.
 
 ## 작업 내용 추가
