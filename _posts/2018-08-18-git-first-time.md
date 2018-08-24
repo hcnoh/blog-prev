@@ -80,7 +80,6 @@ Username for 'https://github.com': hcnoh
 Password for 'https://hcnoh@github.com':
 {% endhighlight %}
 위의 명령을 실행하였으나
-![image](/assets/img/2018-08-18-git-first-time/07.png)
 {% highlight bash %}
 To https://github.com/hcnoh/wavenet.git
  ! [rejected]       master -> master (fetch first)
@@ -92,9 +91,31 @@ To https://github.com/hcnoh/wavenet.git
  hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 {% endhighlight %}
 또 에러가 발생하였다. 문제의 원인은 원격 origin 상에 있는 README.md 파일이었다. 이 파일이 로컬 저장소에는 없지만 원격 origin 상에 존재하기 때문에 이 에러가 발생한 것이다. 해결법은 다음과 같다. 먼저 push 전에 pull을 통하여 로컬에 없는 파일을 가져와 주고 push를 하면 되는 것이다.
-![image](/assets/img/2018-08-18-git-first-time/08.png)
-![image](/assets/img/2018-08-18-git-first-time/09.png)
-![image](/assets/img/2018-08-18-git-first-time/10.png)
-![image](/assets/img/2018-08-18-git-first-time/11.png)
+{% highlight bash %}
+>>> git pull origin master
+warning: no common commits
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/hcnoh/wavenet
+ * branch           master      -> FETCH_HEAD
+ * [new branch]     master      -> origin/master
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+>>> git push origin master
+Username for 'https://github.com': hcnoh
+Password for 'https://hcnoh@github.com':
+Counting objects: 6, done.
+Delta compression using up to 12 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 2.56 KiB | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/hcnoh/wavenet.git
+    2e4d61d..03a125c    master -> master
+>>> ls
+initial  model.py  README.md
 로컬 및 origin이 동기화가 제대로 된 것을 확인할 수 있다.
 
