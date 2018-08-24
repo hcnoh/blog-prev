@@ -72,8 +72,14 @@ Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 {% highlight bash %}
 >>> git remote add origin https://github.com/hcnoh/wavenet.git
 {% endhighlight %}
-이 명령은 origin이라는 이름으로 `https://github.com/hcnoh/wavenet`의 repo를 remote repo로 등록하라는 명령이다.  
+이 명령은 origin이라는 이름으로 `https://github.com/hcnoh/wavenet`의 repo를 remote repo로 등록하라는 명령이다.
+
 따라서 앞으로는 `https://github.com/hcnoh/wavenet`처럼 긴 URL 대신에 origin으로 짧게 사용할 수 있게 된 것이다.
+
+또한 remote repo의 정보를 확인하기 위해서는 다음의 명령어를 타이핑하면 된다.
+{% highlight bash %}
+>>> git remote -v
+{% endhighlight %}
 
 ## 작업 내용 추가
 add => commit => push
