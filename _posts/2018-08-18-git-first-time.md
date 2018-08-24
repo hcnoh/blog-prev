@@ -62,8 +62,7 @@ To push the current branch and set the remote as upstream, use
 error: src refspec master does not match any.
 error: failed to push some refs to 'https://github.com/hcnoh/wavenet.git'
 {% endhighlight %}
-에러 메시지를 검색해보니 다음 링크와 같은 팁을 확인할 수 있었다: [[link]](http://yjoo00.tistory.com/111)
-위 링크에 의하면 repo에 아직 commit을 한 적이 없기 때문에 원격 origin에 추가할 branch 또한 존재하지 않아서 발생한 에러라고 한다. 해결하기 위하여 다음의 명령어를 차례로 쳐보았다.
+에러 메시지를 검색해보니 다음 [링크](http://yjoo00.tistory.com/111)와 같은 팁을 확인할 수 있었다. 위 링크에 의하면 repo에 아직 commit을 한 적이 없기 때문에 원격 origin에 추가할 branch 또한 존재하지 않아서 발생한 에러라고 한다. 해결하기 위하여 다음의 명령어를 차례로 쳐보았다.
 {% highlight bash %}
 >>> touch initial
 >>> git add initial
