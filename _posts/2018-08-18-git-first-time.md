@@ -21,6 +21,7 @@ git config user.email "rhc0624@gmail.com"
 git config user.name "hcnoh"
 {% endhighlight %}
 `git config -global user.name ~` 명령을 사용하여도 되지만 현재 공용 서버를 활용 중이라 global로 선언하지는 않는 걸로 하였다. 이 부분은 좀 헷갈려서 추후에 확인하고 기록하도록 하겠다.
+확인 결과 global로 선언하면 현재 repo뿐 아니라 이 계정에서 생성하는 모든 repo의 config가 설정되는 것으로 파악하였다.
 
 ## GitHub Repository 생성
 
