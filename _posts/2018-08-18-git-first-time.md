@@ -105,6 +105,8 @@ Merge made by the 'recursive' strategy.
  README.md | 2 ++
  1 file changed, 2 insertions(+)
  create mode 100644 README.md
+{% endhighlight %}
+{% highlight bash %}
 >>> git push origin master
 Username for 'https://github.com': hcnoh
 Password for 'https://hcnoh@github.com':
@@ -115,6 +117,8 @@ Writing objects: 100% (6/6), 2.56 KiB | 0 bytes/s, done.
 Total 6 (delta 0), reused 0 (delta 0)
 To https://github.com/hcnoh/wavenet.git
     2e4d61d..03a125c    master -> master
+{% endhighlight %}
+{% highlight bash %}
 >>> ls
 initial  model.py  README.md
 {% endhighlight %}
