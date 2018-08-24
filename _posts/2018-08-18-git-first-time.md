@@ -27,7 +27,6 @@ git config user.name "hcnoh"
 
 그 다음으로는 먼저 GitHub 상에서 `wavenet`이라는 이름으로 repo를 하나 만들어 준다. 이 이름은 현재 작업중인 프로젝트의 디렉토리 이름과 같다는 점을 확인하자.
 현재 작업중인 디렉토리의 경로는 `~/wavenet`이다. 이 디렉토리 상에서 `git init` 명령을 통하여 이 디렉토리 `~/wavenet`이 로컬 git repository라고 선언한다.
-![image](/assets/img/2018-08-18-git-first-time/01.png)
 {% highlight bash %}
 >>> git init
 Initialized empty Git repository in /home/hcnoh/wavenet/.git/
@@ -43,10 +42,16 @@ Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 origin  https://github.com/hcnoh/wavenet.git (fetch)
 origin  https://github.com/hcnoh/wavenet.git (push)
 {% endhighlight %}
-![image](/assets/img/2018-08-18-git-first-time/02.png)
 `git remote -v` 명령을 통하여 제대로 로컬 저장소가 원격 origni에 연결되었는지 확인할 수 있다.
 바로 push를 해본다.
 ![image](/assets/img/2018-08-18-git-first-time/03.png)
+{% highlight bash %}
+>>> git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+{% endhighlight %}
 에러가 난다. 에러 메시지에서 추천해주는 명령어 역시 에러가 난다. 다음의 링크로부터 해결 방법을 찾아봤다: [[link]](http://www.talkdev.net/git-%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%82%AC%EC%9A%A9%EB%B2%95/)
 먼저 `git add`를 해본다.
 {% highlight bash %}
