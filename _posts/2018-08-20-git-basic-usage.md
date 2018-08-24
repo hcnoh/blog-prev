@@ -76,10 +76,32 @@ Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 
 따라서 앞으로는 `https://github.com/hcnoh/wavenet`처럼 긴 URL 대신에 origin으로 짧게 사용할 수 있게 된 것이다.
 
-또한 remote repo의 정보를 확인하기 위해서는 다음의 명령어를 타이핑하면 된다.
+또한 현재 remote repo의 정보를 확인하기 위해서는 다음의 명령어를 타이핑하면 된다.
 {% highlight bash %}
 >>> git remote -v
 {% endhighlight %}
 
-## 작업 내용 추가
-add => commit => push
+## 작업 내용 Push
+먼저 로컬 repo는 git이 관리하는 세 그룹으로 나뉘어져 있다는 점을 알고 넘어가자. 첫 번째 그룹은 Working directory은 실제 파일들로 이루어져 있으며, 두 번째 그룹인 Index는 준비 영역(staging area)의 역할을 한다. 마지막인 HEAD는 최종 확정본(commit)을 나타내게 된다.
+
+먼저 변경된 파일을 Index에 추가하는 과정이 필요하다. 다음의 명령어를 통해 추가할 수 있다.
+{% highlight bash %}
+>>> git add model.py
+{% endhighlight %}
+
+또는 다음의 명령어를 통하여 현재 디렉토리의 모든 파일을 추가할 수 있다.
+{% highlight bash %}
+>>> git add .
+{% endhighlight %}
+
+현재까지가 바로 Git의 기본 작업 흐름에서 첫 단계에 해당된다. 하지만 실제로 변경 내용을 확정하려면 다음의 명령을 타이핑해야 한다.
+{% highlight bash %}
+>>> git commit -m "commit message!"
+{% endhighlight %}
+이 과정까지 끝내면 작업 내용이 HEAD에 반영이 되니 것이다.
+
+하지만 실제로 remote repo에 반영하기 위해서는 push를 해주어야 한다. 다음의 명령어를 타이핑한다.
+{% highlight bash %}
+>>> git push origin master
+{% endhighlight %}
+이 명령은 origin 서버에 master branch로 push하라는 명령이다. master branch가 아닌 다른 branch로 push하기를 원한다면 master를 원하는 branch 이름으로 바꿔주면 된다.
