@@ -16,10 +16,10 @@ twitter_text: 'Git 처음 사용하기'
 ## Git Config 설정
 
 일단 Git은 설치가 되어있는 상황에서 시작한다. 먼저 Git에게 나의 정보를 알려주는 과정인 Config 설정을 시작해보자. 다음의 명령어를 사용하여 Config 설정을 끝내자.
-'''bash
+```bash
 git config user.email "rhc0624@gmail.com"
 git config user.name "hcnoh"
-'''
+```
 
 {% highlight bash %}
 git config user.email "rhc0624@gmail.com"
