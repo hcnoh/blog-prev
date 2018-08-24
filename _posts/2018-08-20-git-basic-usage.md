@@ -16,7 +16,7 @@ twitter_text: 'Git 기본 사용법'
 이번 포스팅은 다음의 링크들을 참고하여 작성하였다:  
 [https://rogerdudler.github.io/git-guide/index.ko.htm](https://rogerdudler.github.io/git-guide/index.ko.html)  
 [https://nolboo.kim/blog/2013/10/06/github-for-beginner/](https://nolboo.kim/blog/2013/10/06/github-for-beginner/)  
-[https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0#_git_cloning](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0#_git_cloning)  
+[https://git-scm.com/book/ko/v2](https://git-scm.com/book/ko/v2)  
 
 ## Git이란?
 어떤 프로젝트를 여러 명의 개발자가 공동으로 작업하는 경우를 생각해보자. 어떤 개발자 A가 특정 소스코드를 작업하고 있을때 다른 개발자 B가 동시에 이 소스코드에서 작업을 수행하기 시작한다. A는 작업을 완료하여 저장하여 서버에 업로드를 하였고 B는 여전히 이전 소스코드에 작업을 하고 있다. B가 작업을 끝내고 업로드를 하는 순간 A가 작업한 내용은 지워지던가 아니면 중복되게 될 것이다. 따라서 이러한 공동 작업 환경에서는 버전 관리가 매우 중요한 이슈가 될 것이다. 이러한 프로젝트의 버전을 관리해주는 소프트웨어가 바로 Git이다.
