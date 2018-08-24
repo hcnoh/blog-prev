@@ -16,6 +16,7 @@ twitter_text: 'Git 기본 사용법'
 이번 포스팅은 다음의 링크들을 참고하여 작성하였다:  
 [https://rogerdudler.github.io/git-guide/index.ko.htm](https://rogerdudler.github.io/git-guide/index.ko.html)  
 [https://nolboo.kim/blog/2013/10/06/github-for-beginner/](https://nolboo.kim/blog/2013/10/06/github-for-beginner/)  
+[https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0#_git_cloning](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-Git-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0#_git_cloning)  
 
 ## Git이란?
 어떤 프로젝트를 여러 명의 개발자가 공동으로 작업하는 경우를 생각해보자. 어떤 개발자 A가 특정 소스코드를 작업하고 있을때 다른 개발자 B가 동시에 이 소스코드에서 작업을 수행하기 시작한다. A는 작업을 완료하여 저장하여 서버에 업로드를 하였고 B는 여전히 이전 소스코드에 작업을 하고 있다. B가 작업을 끝내고 업로드를 하는 순간 A가 작업한 내용은 지워지던가 아니면 중복되게 될 것이다. 따라서 이러한 공동 작업 환경에서는 버전 관리가 매우 중요한 이슈가 될 것이다. 이러한 프로젝트의 버전을 관리해주는 소프트웨어가 바로 Git이다.
@@ -53,6 +54,13 @@ Git으로 작업을 수행하기 위해서는 origin이 될 온라인 Repository
 Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 {% endhighlight %}
 초기화가 제대로 되었음을 확인할 수 있다. 이제 현재 디렉토리인 `~/wavenet`은 wavenet 온라인 repo 작업을 위한 로컬 repo로 설정되었다.
+
+## Repository 받아오기
+다른 프로젝트에 참여하거나 Git repo를 복사하고 싶은 경우에는 `git clone`명령을 사용한다. wavenet 온라인 repo를 받아오기 위해서는 다음과 같은 명령을 타이핑하면 된다.
+{% highlight bash %}
+>>> git clone https://github.com/hcnoh/wavenet
+{% endhighlight %}
+이 명령을 통해서 현재 디렉토리에 `wavenet`이라는 디렉토리를 생성하여 그 안에 `.git` 디렉토리를 생성한다. 또한 repo의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 Checkout해 놓는다.
 
 ## 작업 내용 추가
 add => commit => push
