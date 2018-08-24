@@ -122,5 +122,6 @@ To https://github.com/hcnoh/wavenet.git
 >>> ls
 initial  model.py  README.md
 {% endhighlight %}
+![image](/assets/img/2018-08-18-git-first-time.md/11.png)
 로컬 및 origin이 동기화가 제대로 된 것을 확인할 수 있다.
 
