@@ -65,5 +65,14 @@ Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 >>> git clone https://github.com/hcnoh/wavenet another_name
 {% endhighlight %}
 
+## 로컬 Repository와 온라인 Repository 연결
+현재 생성된 로컬 repo와 온라인 repo인 `https://github.com/hcnoh/wavenet`을 연결하기 위해서는 `git remote` 명령어를 사용한다.
+
+다음의 명령을 타이핑한다.
+{% highlight bash %}
+>>> git remote add origin https://github.com/hcnoh/wavenet.git
+{% endhighlight %}
+이 명령은 origin이라는 이름으로 `https://github.com/hcnoh/wavenet`의 repo를 remote repo로 등록하라는 명령이다. 즉 앞으로는 `https://github.com/hcnoh/wavenet`처럼 긴 URL 대신에 origin으로 대신 사용할 수 있게 된 것이다.
+
 ## 작업 내용 추가
 add => commit => push
