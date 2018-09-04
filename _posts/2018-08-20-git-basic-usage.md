@@ -42,39 +42,39 @@ Git으로 작업을 수행하기 위해서는 origin이 될 온라인 Repository
 ## 로컬 Repository 생성
 이제 로컬에서 작업하기 위한 로컬 repo를 생성해야 한다. 현재 온라인 repo의 프로젝트 이름과 일치하는 디렉토리를 로컬에 만들어 준다.
 {% highlight bash %}
->>> mkdir ~/wavenet
+>>> mkdir ~/wavenet-tensorflow
 {% endhighlight %}
 그 다음 방금 생성된 디렉토리가 로컬 repo라고 설정을 해줘야 한다. 먼저 방금 생성된 폴더로 이동한다.
 {% highlight bash %}
->>> cd ~/wavenet
+>>> cd ~/wavenet-tensorflow
 {% endhighlight %}
 그 다음 `git init` 명령을 통해 현재 디렉토리를 로컬 repo로 설정한다.
 {% highlight bash %}
 >>> git init
-Initialized empty Git repository in /home/hcnoh/wavenet/.git/
+Initialized empty Git repository in /home/hcnoh/wavenet-tensorflow/.git/
 {% endhighlight %}
-초기화가 제대로 되었음을 확인할 수 있다. 이제 현재 디렉토리인 `~/wavenet`은 wavenet 온라인 repo 작업을 위한 로컬 repo로 설정되었다.
+초기화가 제대로 되었음을 확인할 수 있다. 이제 현재 디렉토리인 `~/wavenet-tensorflow`은 wavenet-tensorflow 온라인 repo 작업을 위한 로컬 repo로 설정되었다.
 
 ## Repository 받아오기
-다른 프로젝트에 참여하거나 Git repo를 복사하고 싶은 경우에는 `git clone`명령을 사용한다. wavenet 온라인 repo를 받아오기 위해서는 다음과 같은 명령을 타이핑하면 된다.
+다른 프로젝트에 참여하거나 Git repo를 복사하고 싶은 경우에는 `git clone`명령을 사용한다. wavenet-tensorflow 온라인 repo를 받아오기 위해서는 다음과 같은 명령을 타이핑하면 된다.
 {% highlight bash %}
->>> git clone https://github.com/hcnoh/wavenet
+>>> git clone https://github.com/hcnoh/wavenet-tensorflow
 {% endhighlight %}
-이 명령을 통해서 현재 디렉토리에 `wavenet`이라는 디렉토리를 생성하여 그 안에 `.git` 디렉토리를 생성한다. 또한 repo의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 Checkout해 놓는다. 디렉토리의 이름을 `wavenet`이 아닌 다른 이름으로 설정하고 싶은 경우에는 다음의 명령을 타이핑하면 된다.
+이 명령을 통해서 현재 디렉토리에 `wavenet-tensorflow`이라는 디렉토리를 생성하여 그 안에 `.git` 디렉토리를 생성한다. 또한 repo의 데이터를 모두 가져와서 자동으로 가장 최신 버전을 Checkout해 놓는다. 디렉토리의 이름을 `wavenet-tensorflow`이 아닌 다른 이름으로 설정하고 싶은 경우에는 다음의 명령을 타이핑하면 된다.
 {% highlight bash %}
->>> git clone https://github.com/hcnoh/wavenet another_name
+>>> git clone https://github.com/hcnoh/wavenet-tensorflow another_name
 {% endhighlight %}
 
 ## 로컬 Repository와 온라인 Repository 연결
-현재 생성된 로컬 repo와 온라인 repo인 `https://github.com/hcnoh/wavenet`을 연결하기 위해서는 `git remote` 명령어를 사용한다.
+현재 생성된 로컬 repo와 온라인 repo인 `https://github.com/hcnoh/wavenet-tensorflow`을 연결하기 위해서는 `git remote` 명령어를 사용한다.
 
 다음의 명령을 타이핑한다.
 {% highlight bash %}
->>> git remote add origin https://github.com/hcnoh/wavenet.git
+>>> git remote add origin https://github.com/hcnoh/wavenet-tensorflow.git
 {% endhighlight %}
-이 명령은 origin이라는 이름으로 `https://github.com/hcnoh/wavenet`의 repo를 remote repo로 등록하라는 명령이다.
+이 명령은 origin이라는 이름으로 `https://github.com/hcnoh/wavenet-tensorflow`의 repo를 remote repo로 등록하라는 명령이다.
 
-따라서 앞으로는 `https://github.com/hcnoh/wavenet`처럼 긴 URL 대신에 origin으로 짧게 사용할 수 있게 된 것이다.
+따라서 앞으로는 `https://github.com/hcnoh/wavenet-tensorflow`처럼 긴 URL 대신에 origin으로 짧게 사용할 수 있게 된 것이다.
 
 또한 현재 remote repo의 정보를 확인하기 위해서는 다음의 명령어를 타이핑하면 된다.
 {% highlight bash %}
