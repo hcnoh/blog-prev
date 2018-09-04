@@ -17,7 +17,8 @@ twitter_text: 'Ubuntu 개발 환경 세팅'
 
 ## MobaXterm 설치
 
-먼저 SSH 접속을 위한 터미널 툴인 MobaXterm을 설치하였다. 기존에는 Putty를 사용하였는데 bash shell이나 zshell을 커스터마이징을 하면 Putty는 그것을 예쁘게 잘 반영하지 못하는 듯 해서 MobaXterm으로 갈아탔다. 다운로드 링크는 다음과 같다: [https://mobaxterm.mobatek.net/](https://mobaxterm.mobatek.net/)
+먼저 SSH 접속을 위한 터미널 툴인 MobaXterm을 설치하였다. 기존에는 Putty를 사용하였는데 bash shell이나 zshell을 커스터마이징을 하면 Putty는 그것을 예쁘게 잘 반영하지 못하는 듯 해서 MobaXterm으로 갈아탔다. 다운로드 링크는 다음과 같다:  
+- [https://mobaxterm.mobatek.net/](https://mobaxterm.mobatek.net/)
 ![image](/assets/img/2018-08-17-development-environment-setting/20180817_01.png)
 Home Edition을 다운받아도 큰 문제는 없을 것이다.
 ![image](/assets/img/2018-08-17-development-environment-setting/20180817_02.png)
@@ -27,11 +28,11 @@ MobaXterm을 통해 업무용 서버로 접속한 모습
 
 tmux 및 zshel, 그리고 vim의 config까지 미리 세팅된 dotfile을 가져와서 간단하게 바로 세팅할 수 있었다. 사용된 dotfiles는 다음의 [링크](https://github.com/wookayin/dotfiles)에서 받을 수 있었다.
 
-One-liner (if, you trust):
+- One-liner (if, you trust):
 {% highlight bash %}
 >>> curl -fsSL https://dotfiles.wook.kr/etc/install | bash
 {% endhighlight %}
-An alternative:
+- An alternative:
 {% highlight bash %}
 >>> git clone --recursive https://github.com/wookayin/dotfiles.git ~/.dotfiles
 >>> cd ~/.dotfiles && python install.py
