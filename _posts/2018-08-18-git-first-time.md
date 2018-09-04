@@ -25,11 +25,11 @@ twitter_text: 'Git 처음 사용하기'
 
 ## GitHub Repository 생성
 
-그 다음으로는 먼저 GitHub 상에서 `wavenet`이라는 이름으로 repo를 하나 만들어 준다. 이 이름은 현재 작업중인 프로젝트의 디렉토리 이름과 같다는 점을 확인하자.
-현재 작업중인 디렉토리의 경로는 `~/wavenet`이다. 이 디렉토리 상에서 `git init` 명령을 통하여 이 디렉토리 `~/wavenet`이 로컬 git repository라고 선언한다.
+그 다음으로는 먼저 GitHub 상에서 `wavenet-tensorflow`이라는 이름으로 repo를 하나 만들어 준다. 이 이름은 현재 작업중인 프로젝트의 디렉토리 이름과 같다는 점을 확인하자.
+현재 작업중인 디렉토리의 경로는 `~/wavenet-tensorflow`이다. 이 디렉토리 상에서 `git init` 명령을 통하여 이 디렉토리 `~/wavenet-tensorflow`이 로컬 git repository라고 선언한다.
 {% highlight bash %}
 >>> git init
-Initialized empty Git repository in /home/hcnoh/wavenet/.git/
+Initialized empty Git repository in /home/hcnoh/wavenet-tensorflow/.git/
 {% endhighlight %}
 초기화가 제대로 되었음을 확인할 수 있다.
 
@@ -37,12 +37,12 @@ Initialized empty Git repository in /home/hcnoh/wavenet/.git/
 
 현재 `model.py`의 오늘 작업은 끝난 상황이라 바로 push를 해보려고 하였다. 로컬 저장소와 원격 origin을 연결하기 위하여 다음의 명령어를 사용하였다.
 {% highlight bash %}
->>> git remote add origin https://github.com/hcnoh/wavenet.git
+>>> git remote add origin https://github.com/hcnoh/wavenet-tensorflow.git
 >>> git remote -v
-origin  https://github.com/hcnoh/wavenet.git (fetch)
-origin  https://github.com/hcnoh/wavenet.git (push)
+origin  https://github.com/hcnoh/wavenet-tensorflow.git (fetch)
+origin  https://github.com/hcnoh/wavenet-tensorflow.git (push)
 {% endhighlight %}
-`git remote -v` 명령을 통하여 제대로 로컬 저장소가 원격 origni에 연결되었는지 확인할 수 있다.
+`git remote -v` 명령을 통하여 제대로 로컬 저장소가 원격 origin에 연결되었는지 확인할 수 있다.
 바로 push를 해본다.
 {% highlight bash %}
 >>> git push
@@ -60,7 +60,7 @@ To push the current branch and set the remote as upstream, use
 {% highlight bash %}
 >>> git push --set-upstream origin master
 error: src refspec master does not match any.
-error: failed to push some refs to 'https://github.com/hcnoh/wavenet.git'
+error: failed to push some refs to 'https://github.com/hcnoh/wavenet-tensorflow.git'
 {% endhighlight %}
 에러 메시지를 검색해보니 다음 [링크](http://yjoo00.tistory.com/111)와 같은 팁을 확인할 수 있었다. 위 링크에 의하면 repo에 아직 commit을 한 적이 없기 때문에 원격 origin에 추가할 branch 또한 존재하지 않아서 발생한 에러라고 한다. 해결하기 위하여 다음의 명령어를 차례로 쳐보았다.
 {% highlight bash %}
@@ -80,9 +80,9 @@ Password for 'https://hcnoh@github.com':
 {% endhighlight %}
 위의 명령을 실행하였으나
 {% highlight bash %}
-To https://github.com/hcnoh/wavenet.git
+To https://github.com/hcnoh/wavenet-tensorflow.git
  ! [rejected]       master -> master (fetch first)
- error: failed to push some refs to 'https://github.com/hcnoh/wavenet.git'
+ error: failed to push some refs to 'https://github.com/hcnoh/wavenet-tensorflow.git'
  hint: Updates were rejected because the remote contains work that you do
  hint: not have locally. This is usually caused by another repository pushing
  hint: to the same ref. You may want to first integrate the remote changes
@@ -97,7 +97,7 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
-From https://github.com/hcnoh/wavenet
+From https://github.com/hcnoh/wavenet-tensorflow
  * branch           master      -> FETCH_HEAD
  * [new branch]     master      -> origin/master
 Merge made by the 'recursive' strategy.
@@ -114,7 +114,7 @@ Delta compression using up to 12 threads.
 Compressing objects: 100% (5/5), done.
 Writing objects: 100% (6/6), 2.56 KiB | 0 bytes/s, done.
 Total 6 (delta 0), reused 0 (delta 0)
-To https://github.com/hcnoh/wavenet.git
+To https://github.com/hcnoh/wavenet-tensorflow.git
     2e4d61d..03a125c    master -> master
 {% endhighlight %}
 {% highlight bash %}
