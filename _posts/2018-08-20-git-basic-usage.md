@@ -98,10 +98,31 @@ Initialized empty Git repository in /home/hcnoh/wavenet-tensorflow/.git/
 {% highlight bash %}
 >>> git commit -m "commit message!"
 {% endhighlight %}
-이 과정까지 끝내면 작업 내용이 HEAD에 반영이 되니 것이다.
+이 과정까지 끝내면 작업 내용이 HEAD에 반영이 되는 것이다.
 
 하지만 실제로 remote repo에 반영하기 위해서는 push를 해주어야 한다. 다음의 명령어를 타이핑한다.
 {% highlight bash %}
 >>> git push origin master
 {% endhighlight %}
 이 명령은 origin 서버에 master branch로 push하라는 명령이다. master branch가 아닌 다른 branch로 push하기를 원한다면 master를 원하는 branch 이름으로 바꿔주면 된다.
+
+## Git commit 취소
+위에서 commit 명령을 통해서 remote repo에 반영하기 전에 HEAD에 먼저 반영을 한다고 하였다. 하지만 가끔 실수로 commit을 하던가 아니면 commit 단계에서의 어떤 문제로 인하여 push가 안되는 경우가 생길 수 있다. 이 경우에는 commit을 취소하여 문제를 해결하는 방법이 있을 수 있다.
+{% highlight bash %}
+>>> git push origin master
+Username for 'https://github.com': hcnoh
+Password for 'https://hcnoh@github.com':
+Counting objects: 15, done.
+Delta compression using up to 12 threads.
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (15/15), 203.79 MiB | 10.41 MiB/s, done.
+Total 15 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 3 local objects.
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.gitub.com.
+remote: error: Trace: 08f3b36675dd671be3f4b76f255740a4
+remote: error: File models/model.ckpt.data-00000-of-00001 is 217.98 MB; this exceeds GitHub's file size limit of 100.00 MB
+To https:// github.com/hcnoh/wavenet-tensorflow
+ ! [remote rejected] master -> master (pre-receive hook declined)
+ error: failed to push some refs to 'https://github.com/hcnoh/wavenet-tensorflow'
+{% endhighlight %}
+commit을 취소하는 명령은 다음과 같다.
