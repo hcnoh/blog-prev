@@ -125,4 +125,23 @@ To https:// github.com/hcnoh/wavenet-tensorflow
  ! [remote rejected] master -> master (pre-receive hook declined)
  error: failed to push some refs to 'https://github.com/hcnoh/wavenet-tensorflow'
 {% endhighlight %}
-commit을 취소하는 명령은 다음과 같다.
+push를 한 경우 다음과 같은 에러가 발생하였다. 어떤 파일의 용량이 219MB의 크기를 가지고있고 이것은 제한 용량을 초과하기 때문에 push가 되지 않는 것이다. 이 경우 저 파일을 지우고 다시 commit을 하더라도 이전에 commit한 것들이 여전히 push에 반영되기 때문에 같은 에러가 발생할 것이다. 이 경우에는 이전에 해놓은 commit들을 삭제해야 한다.
+
+commit을 취소하는 명령들은 다음과 같다.
+
+- 최종 commit을 취소하되 파일은 복구/삭제하지 않는 명령
+{% highlight bash %}
+>>> git reset HEAD^
+{% endhighlight %}
+- 최종 commit을 취소하고 파일도 복구/삭제
+{% highlight bash %}
+>>> git reset --hard HEAD^
+{% endhighlight %}
+- 최종 commit을 n개 취소하되 파일은 복구/삭제하지 않는 명령
+{% highlight bash %}
+>>> git reset HEAD~n
+{% endhighlight %}
+- 최종 commit을 n개 취소하고 파일도 복구/삭제
+{% highlight bash %}
+>>> git reset --hard HEAD~n
+{% endhighlight %}
