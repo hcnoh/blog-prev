@@ -145,3 +145,45 @@ commit을 취소하는 명령들은 다음과 같다.
 {% highlight bash %}
 >>> git reset --hard HEAD~n
 {% endhighlight %}
+
+## Git origin 변경/추가
+위에서 git의 remote repo의 이름을 origin으로 설정하였다. 이 이름을 바꾸고 싶으면 다음과 같은 명령을 수행하면 된다.
+{% highlight bash %}
+>>> git remote -v
+origin https://github.com/hcnoh/wavenet-tensorflow (fetch)
+origin https://github.com/hcnoh/wavenet-tensorflow (push)
+>>> git remote rename origin github_origin
+github_origin https://github.com/hcnoh/wavenet-tensorflow (fetch)
+github_origin https://github.com/hcnoh/wavenet-tensorflow (push)
+{% endhighlight %}
+`git remote rename origin github_origin`명령을 통해 origin이 github_origin으로 이름이 변경된 것을 확인할 수 있다.
+
+여기서 새로운 remote repo를 추가하고 싶으면 다음의 명령을 수행하면 된다.
+{% highlight bash %}
+>>> git remote add github_origin_2 https://github.com/hcnoh/wavenet-tensorflow-2.git
+{% endhighlight %}
+
+`git remote -v`를 통해 새로운 remote repo가 추가된 것을 확인할 수 있다.
+{% highlight bash %}
+>>> git remote -v
+github_origin https://github.com/hcnoh/wavenet-tensorflow (fetch)
+github_origin https://github.com/hcnoh/wavenet-tensorflow (push)
+github_origin_2 https://github.com/hcnoh/wavenet-tensorflow-2 (fetch)
+github_origin_2 https://github.com/hcnoh/wavenet-tensorflow-2 (push)
+{% endhighlight %}
+
+만약 github_origin_2가 비어있는 repo인 상태라면 그대로 push를 해주면 기존의 remote repo인 github_origin이 복사되는 것과 같은 효과를 볼 수 있을 것이다.
+{% highlight bash %}
+>>> git push github_origin_2 master
+Username for 'https://github.com/hcnoh/wavenet-tensorflow-2': hcnoh
+Password for 'https://github.com/hcnoh/wavenet-tensorflow-2':
+Counting objects: 120, done.
+Delta compression using up to 12 threads.
+Compressing objects: 100% (113/113), done.
+Writing objects: 100% (120/120), 118.46 KiB | 0 bytes/s, done.
+Total 120 (delta 66), reused 0 (delta 0)
+remote: Resolving deltas: 100% (66/66), done.
+To https://github.com/hcnoh/wavenet-tensorflow-2.git
+ * [new branch]     master -> master
+{% endhighlight %}
+
