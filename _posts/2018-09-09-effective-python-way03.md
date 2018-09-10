@@ -78,3 +78,7 @@ def to_str(unicode_or_str):
 - 이런 str과 unicode를 + 연산자로 묶을 수 있다.
 - `==`/ `!=` 연산자로 str과 unicode를 비교할 수 있다.
 - `%s` 같은 포맷 문자열에 unicode 인스턴스를 사용할 수 있다.
+
+이 의미를 정리하면 다음과 같다.
+- 파이썬2에서 7비트 아스키만 처리하는 경우: str 또는 unicode를 받는 함수에 str이나 unicode 인스턴스를 넘겨도 동작
+- 파이썬3에서는 bytes/str 인스턴스는 같지 않으니 주의해야 
