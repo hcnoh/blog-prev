@@ -34,8 +34,7 @@ twitter_text: '이펙티브 파이썬 스터디 WAY 03 정리'
 2. 인코딩이 없는 유니코드 문자를 처리하려는 상황
 이 두 경우에서 서로간의 변환 및 입력값과 스크립트 내부에서 사용되는 타입이 일치하게 하기 위해서는 로 "8비트 값 <=> 유니코드 문자"가 가능한 메서드가 필요하다.
 
-- 파이썬 3
-1. str => bytes
+- 파이썬 3: str => bytes
 {% highlight python %}
 def to_str(bytes_or_str):
     if isinstance(bytes_or_str, bytes):
@@ -44,7 +43,7 @@ def to_str(bytes_or_str):
         value = bytes_or_str
     return value  # str 인스턴스
 {% endhighlight %}
-2. bytes => str
+- 파이썬 3: bytes => str
 {% highlight python %}
 def to_bytes(bytes_or_str):
     if isinstance(bytes_r_str, str):
