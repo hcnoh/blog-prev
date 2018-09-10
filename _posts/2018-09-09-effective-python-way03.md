@@ -76,5 +76,5 @@ def to_str(unicode_or_str):
 
 1. 파이썬 2에서 str이 7비트 아스키 문자만 포함하고 있는 경우에는 unicode와 str 인스턴스가 같은 타입처럼 보인다.
 - 이런 str과 unicode를 + 연산자로 묶을 수 있다.
-- `=`/ `!=` 연산자로 str과 unicode를 비교할 수 있다.
+- `==`/ `!=` 연산자로 str과 unicode를 비교할 수 있다.
 - `%s` 같은 포맷 문자열에 unicode 인스턴스를 사용할 수 있다.
