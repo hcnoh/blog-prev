@@ -55,10 +55,19 @@ def to_bytes(bytes_or_str):
 {% endhighlight %}
 - 파이썬 2: unicode, str => unicode
 {% highlight python %}
-def to_unicode(bytes_or_str):
+def to_unicode(unicode_or_str):
     if isinstance(unicode_or_str, str):
         value = unicode_or_str.decode("utf-8")
     else:
         value = unicode_or_str
     return value  # unicode 인스턴스
+{% endhighlight %}
+- 파이썬 2: unicode, str => str
+{% highlight python %}
+def to_str(unicode_or_str):
+    if isinstance(unicode_or_str, unicode):
+        value = unicode_or_str.encode("utf-8")
+    else:
+        value = unicode_or_str
+    return value  # str 인스턴스
 {% endhighlight %}
