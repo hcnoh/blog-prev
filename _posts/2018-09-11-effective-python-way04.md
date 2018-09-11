@@ -57,4 +57,42 @@ green의 경우 my_values 딕셔너리의 value가 멤버 하나(빈 문자열)�
 
 opacity의 경우는 my_values 딕셔너리에 key가 아예 존재하지 않는다. get 메서드는 key가 딕셔너리에 없으면 두 번째 인수를 반환한다. 이때 반환되는 기본값은 멤버 하나(빈 문자열)만 있는 리스트이다. 따라서 or 표현식의 두 번째 부분인 0을 할당받는다.
 
+위 식을 사용하기 위해서는 문자열 출력을 정수값으로 파싱을 할 필요가 있다. 내장 함수 `int`를 이용하면 정수값으로 파싱이 가능하다.
+{% highlight python %}
+red = int(my_values.get("red", [""])[0] or 0)
+{% endhighlight %}
+위 식은 사실 매우 읽기 어렵다. 이렇게 짧게 짜는게 좋을 수도 있지만 사실 `한 줄에 코든 코드를 집어넣는 것은 큰 의미가 없다`.
+
+파이썬 2.5에 추가된 if/else 조건식(삼항 표현식)을 이용하면 코드를 짧게 유지하면서도 더 명확하게 표현할 수 있다.
+{% highlight python %}
+red = my_values.get("red", [""])
+red = int(red[0]) if red[0] else 0
+{% endhighlight %}
+
+물론 다음과 같이 모든 로직을 펼쳐서 볼 수도 있다. 물론 보기에는 더 복잡해 보인다.
+{% highlight python %}
+green = my_values.get("green", [""])
+if green[0]:
+    green = int(green[0])
+else:
+    green = 0
+{% endhighlight %}
+
+이 로직을 반복해서 사용한다면 헬퍼 함수를 만드는 게 좋다.
+{% highlight python %}
+def get_first_int(values, key, default=0)
+    found = my_values.get(key, [""])
+    if found[0]:
+        found = int(found[0])
+    else:
+        found = 0
+    return found
+{% endhighlight %}
+
+이렇게 헬퍼 함수를 쓰면 호출 코드가 훨씬 더 명확해진다.
+{% highlight python %}
+green = get_first_int(my_values, "green")
+{% endhighlight %}
+표현식이 복잡해지기 시작하면 최대한 빨리 해당 표현식을 `작은 조각으로 분할하고 로직을 헬퍼 함수로 옮기는 방안`을 고려해야 한다. 무조건 짧은 코드보다 `가독성이 더 중요`하다. 이렇게 복잡한 표현식에는 파이썬의 함축적인 문법이 오히려 가독성을 해치게 된다.
+
 
