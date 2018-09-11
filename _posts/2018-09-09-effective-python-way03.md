@@ -86,3 +86,18 @@ def to_str(unicode_or_str):
 두 번째 이슈는 파이썬 내장 함수 open이 반환하는 파일 핸들을 사용하는 연산의 기본 인코딩 방식이다.
 - 파이썬 2에서는 바이너리 인코딩(로 8비트 값) 사용
 - 파이썬 3에서는 `utf-8` 인코딩 사용
+
+다음의 코드는 파이썬 2에서는 잘 동작하지만, 파이썬 3에서는 동작하지 않는다.
+{% highlight python %}
+with open("/tmp/random.bin", "w") as f:
+    f.write(os.urandom(10))
+
+>>
+TypeError: must be str, not bytes
+{% endhighlight %}
+에러의 원인은 파이썬 3의 open은 encoding이라는 파라미터를 받아야 하기 때문이다. 파이썬 2와는 다르게 파이썬 3의 open은 바이너리가 아닌 인코딩 값을 받기 때문에 인코딩 방법을 명시해줘야 하기 때문이다. 이 코드가 동작하기 위해서는 다음처럼 수정해주면 된다.
+{% highlight python %}
+with open("/tmp/random.bin", "wb) as f:
+    f.write(os.urandom(10))
+{% endhighlight %}
+즉 위처럼 문자 쓰기 모드 `w`가 아니라 바이너리 쓰기 모드인 `wb`로 설정해주면 파이썬 2에서처럼 잘 동작한다는 것을 확인할 수 있다. 읽기 모드에서도 마찬가지로 `r`, `rb`가 사용된다.
