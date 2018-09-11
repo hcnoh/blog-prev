@@ -41,4 +41,20 @@ red와 green 파라미터는 제대로 나오며 opacity 파라미터는 빠져�
 red = my_values.get("red", [""])[0] or 0
 green = my_values.get("green", [""])[0] or 0
 opacity = my_values.get("opacity", [""])[0] or 0
+print("Red: ", red)
+print("Green: ", green)
+print("Opacity, ", opacity)
+
+>>>
+Red: "5"
+Green: 0
+Opacity: 0
 {% endhighlight %}
+
+red의 경우 my_values 딕셔너리 내부에 key가 있으며 value는 멤버 하나(문자열 "5")만 있는 리스트이다. 따라서 암시적으로 이 문자열은 `True`가 되며 red는 or 표현식의 첫 번째 부분을 할당받는다.
+
+green의 경우 my_values 딕셔너리의 value가 멤버 하나(빈 문자열)만 있는 리스트이다. 빈 문자열은 암시적으로 `False`이므로 or 표현식의 결과는 두 번째 부분인 0이 된다.
+
+opacity의 경우는 my_values 딕셔너리에 key가 아예 존재하지 않는다. get 메서드는 key가 딕셔너리에 없으면 두 번째 인수를 반환한다. 이때 반환되는 기본값은 멤버 하나(빈 문자열)만 있는 리스트이다. 따라서 or 표현식의 두 번째 부분인 0을 할당받는다.
+
+
