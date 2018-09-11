@@ -92,7 +92,7 @@ def to_str(unicode_or_str):
 with open("/tmp/random.bin", "w") as f:
     f.write(os.urandom(10))
 
->>
+>>>
 TypeError: must be str, not bytes
 {% endhighlight %}
 에러의 원인은 파이썬 3의 open은 encoding이라는 파라미터를 받아야 하기 때문이다. 파이썬 2와는 다르게 파이썬 3의 open은 바이너리가 아닌 인코딩 값을 받기 때문에 인코딩 방법을 명시해줘야 하기 때문이다. 이 코드가 동작하기 위해서는 다음처럼 수정해주면 된다.
