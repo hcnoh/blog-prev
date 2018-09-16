@@ -47,3 +47,9 @@ z = y.decode("utf-8")
 >>>
 UnicodeDecoderError: 'utf-8' codec can't decode byte 0x9d in position 0: invalid start byte
 {% endhighlight %}
+- -n stride
+{% highlight python %}
+a = ["a", "b", "c", "d", "e", "f", "g", "h"]
+a[::2]    # ["a", "c", "e", "g"]
+a[::-2]   # ["h", "f", "d", "b"]
+{% endhighlight %}
