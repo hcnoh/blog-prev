@@ -11,34 +11,32 @@ categories:
 twitter_text: '이펙티브 파이썬 스터디 WAY 01 정리'
 ---
 
-## WAY 1. 사용중인 파이썬의 버전을 알자
+# WAY 1. 사용중인 파이썬의 버전을 알자
 앞으로 스터디에서 다를 예제들의 파이썬 버전은 파이썬 3.4가 될 것이다. 또한 파이썬 2.7과의 비교를 위한 예제들 역시 제공될 것이다.  
 이번 포스팅은 다음의 링크를 참고하여 작성하였다.
 - [http://khanrc.tistory.com/entry/%EB%8B%A4%EC%96%91%ED%95%9C-Python%EB%93%A4#fnref-f1](http://khanrc.tistory.com/entry/%EB%8B%A4%EC%96%91%ED%95%9C-Python%EB%93%A4#fnref-f1)
 
-보통 PC에는 기본적으로 표준 CPython 런타임 환경의 여러 버전이 미리 설치되어 있다. 하지만 커맨드 라인 상에서 사용되는 기본 파이썬의 버전은 확실하지 않을 수 있다. 따라서 사용중인 파이썬의 버전을 확인하는 방법을 알아야 할 것이다. 파이썬의 버전은 다음과 같이 `--version` 플래그를 이용할 수 있다.
+## 파이썬의 버전 확인:
+- 기본적으로 CPython 런타임 환경의 여러 버전이 미리 설치
+- 커맨드 라인 상에서 사용되는 기본 파이썬의 버전 확인: `--version` 플래그를 이용
+- 파이썬 3는 특별히 `python 3` 명령 사용
 
-# 파이썬의 버전 확인:
-  - 기본적으로 CPython 런타임 환경의 여러 버전이 미리 설치
-  - 커맨드 라인 상에서 사용되는 기본 파이썬의 버전 확인: `--version` 플래그를 이용
-  - 파이썬 3는 특별히 `python 3` 명령 사용
-
-- 파이썬 2.7의 버전 확인: `--version`
+## 파이썬 2.7의 버전 확인: `--version`
 {% highlight bash %}
 >>> python --version
 Python 2.7.8
 {% endhighlight %}
 
-- 파이썬 3의 버전 확인: `--version`
+## 파이썬 3의 버전 확인: `--version`
 {% highlight bash %}
 >>> python3 --version
 Python 3.4.2
 {% endhighlight %}
 
 또한 파이썬에 내장된 `sys` 모듈을 이용하여 런타임에 사용중인 파이썬 버전을 확인할 수도 있다.
-- 파이썬 내장 `sys` 모듈:
-  - 런타임에 사용중인 파이썬 버전 확인
-  - 이것을 이용하여 런타임마다 모듈 임포트를 다르게 설정해줄 수 있음
+## 파이썬 내장 `sys` 모듈:
+- 런타임에 사용중인 파이썬 버전 확인
+- 이것을 이용하여 런타임마다 모듈 임포트를 다르게 설정해줄 수 있음
 {% highlight python %}
 import sys
 print(sys.version_info)
