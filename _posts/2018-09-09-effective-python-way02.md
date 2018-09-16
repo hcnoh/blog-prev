@@ -85,7 +85,24 @@ class InstMethod:
 name_instance = InstMethod("hyungcheol_noh")
 
 # print_name이라는 함수를 호출하기 위해서는 name_instance처럼 인스턴스를 먼저 선언해야 함
-# 이것이 인스턴스 메서드
 name_instance.print_name()
+>>> my name is hyungcheol_noh
+{% endhighlight %}
+- 클래스 메서드:
+  - 인스턴스 메서드와 다르게 자기 자신을 첫 번째 파라미터로 받음
+  - `@classmethod` 데코레이터를 이용하여 선언
+  - self가 아닌 cls를 매개변수로 사용
+- 클래스 메서드 예제:
+{% highlight python %}
+class ClassMethod:
+    
+    __name = "hyungcheol_noh"
+
+    @classmethod
+    def print_name(cls):
+        print("my name is " + cls.__name)
+
+# 인스턴스를 따로 선언해줄 필요없이 함수를 호출할 수 있음
+ClassMethod.print_name()
 >>> my name is hyungcheol_noh
 {% endhighlight %}
