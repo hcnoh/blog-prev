@@ -15,6 +15,9 @@ twitter_text: 'TensorFlow 설치'
 
 Tmux 및 zshell, vim까지 세팅이 대충 끝나고 이제는 TensorFlow를 설치하여 작업 환경 구축을 마무리할 생각이다. TensorFlow는 여러 가상환경 위에서 설치하는 것을 제공하지만 여기서는 Virtualenv를 이용한 가상환경 위에서 설치하는 방법을 정리하였다.
 
+이번 포스팅은 TensorFlow 공식 홈페이지에 나온 방법을 참고하여 정리하였다.
+- [출처 1](https://www.tensorflow.org/install/install_linux#InstallingVirtualenv)
+
 ## 가상환경 만들기
 먼저 다음과 같이 파이썬 가상환경을 만들어 준다. 물론 Virtualenv는 이미 설치가 되어있는 상태이다. 가상환경의 이름은 tensorflow로 한다. 다음의 명령을 통해서 tensorflow라는 이름의 파이썬2 가상환경을 만들 수 있다.
 {% highlight bash %}
