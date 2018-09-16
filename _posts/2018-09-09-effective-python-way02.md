@@ -57,7 +57,7 @@ a=b       # 틀린 예시
 {% highlight python %}
 for i in range(10): print("hello world")    # 틀린 예시
 for i in range(10):
-    print("hello world")                    # 
+    print("hello world")                    # 옳은 예시
 end
 {% endhighlight %}
 - 항상 파일 맨 위에 `import` 문
