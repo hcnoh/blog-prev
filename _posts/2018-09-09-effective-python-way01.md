@@ -17,6 +17,7 @@ twitter_text: '이펙티브 파이썬 스터디 WAY 01 정리'
 이번 포스팅은 다음의 링크를 참고하여 작성하였다.
 - [http://khanrc.tistory.com/entry/%EB%8B%A4%EC%96%91%ED%95%9C-Python%EB%93%A4#fnref-f1](http://khanrc.tistory.com/entry/%EB%8B%A4%EC%96%91%ED%95%9C-Python%EB%93%A4#fnref-f1)
 
+
 ## 커맨드 라인 상에서 파이썬의 버전 확인:
 
 - 기본적으로 CPython 런타임 환경의 여러 버전이 미리 설치
@@ -33,6 +34,7 @@ Python 2.7.8
 Python 3.4.2
 {% endhighlight %}
 
+
 ## 파이썬 런타임 버전 확인:
 
 - 런타임에 사용중인 파이썬 버전 확인: 파이썬 내장 `sys` 모듈
@@ -48,11 +50,13 @@ sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
 [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.51)]
 {% endhighlight %}
 
+
 ## 파이썬 2 or 3?
 
 - 파이썬 2와 3 모두 파이썬 커뮤니티에서 적극적으로 유지보수 중
 - 하지만 파이썬 2의 유지보수는 사실상 중지
 - `2to3`, `six` 같은 도구를 이용하면 3으로 쉽게 옮겨갈 수 있음
+
 
 ## 파이썬 런타임 환경 정리
 
