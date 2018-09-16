@@ -75,10 +75,20 @@ a, b = c[:2]
 {% highlight python %}
 a = ["a", "b", "c", "d", "e", "f", "g", "h"]
 print("Before :", a)
-a[2:7] = [99, 22, 14]     # 할당의 길이가 달라도 
+a[2:7] = [99, 22, 14]     # 할당의 길이가 달라도 됨
 print("After: ", a)
 
 >>>
 Before: ["a", "b", "c", "d", "e", "f", "g", "h"]
 After: ["a", "b", 99, 22, 14, "h"]
+{% endhighlight %}
+- 원본 리스트의 복사
+{% highlight python %}
+b = a[:]
+assert b == a and b is not a
+{% endhighlight %}
+- 리스트의 할당
+{% endhighlight %}
+b = a
+assert a is b
 {% endhighlight %}
