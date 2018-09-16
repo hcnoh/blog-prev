@@ -18,16 +18,13 @@ twitter_text: '이펙티브 파이썬 스터디 WAY 01 정리'
 
 ## 파이썬의 버전 확인:
 - 기본적으로 CPython 런타임 환경의 여러 버전이 미리 설치
-
 - 커맨드 라인 상에서 사용되는 기본 파이썬의 버전 확인: `--version` 플래그를 이용
 - 파이썬 3는 특별히 `python 3` 명령 사용
-
 - 파이썬 2.7의 버전 확인: `--version`
 {% highlight bash %}
 >>> python --version
 Python 2.7.8
 {% endhighlight %}
-
 - 파이썬 3의 버전 확인: `--version`
 {% highlight bash %}
 >>> python3 --version
