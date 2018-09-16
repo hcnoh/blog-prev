@@ -67,4 +67,18 @@ Before: ["e", "f", "g", "h"]
 After: ["a", "b", "c", "d", "e", "f", "g", "h"]
 After: ["e", 99, "g", "h"]
 {% endhighlight %}
+- 튜플 할당:
+{% highlight python %}
+a, b = c[:2]
+{% endhighlight %}
+- 슬라이스 할당:
+{% highlight python %}
+a = ["a", "b", "c", "d", "e", "f", "g", "h"]
+print("Before :", a)
+a[2:7] = [99, 22, 14]     # 할당의 길이가 달라도 
+print("After: ", a)
 
+>>>
+Before: ["a", "b", "c", "d", "e", "f", "g", "h"]
+After: ["a", "b", 99, 22, 14, "h"]
+{% endhighlight %}
