@@ -22,8 +22,8 @@ twitter_text: '이펙티브 파이썬 스터디 WAY 05 정리'
 {% highlight python %}
 a = ["a", "b", "c", "d", "e", "f", "g", "h"]
 print("Firts four:", a[:4])     # 리스트의 처음부터 슬라이스할 때는 인덱스 0 생략: assert a[:5] == a[0:5]
-print("Last four:", a[-4:])
-print("Middle two:", a[3:-3])
+print("Last four:", a[-4:])     # 리스트의 끝까지 슬라이스 할 때는 마지막 인덱스 생략: assert a[5:] == a[5:len(a)]
+print("Middle two:", a[3:-3])   # 리스트의 끝을 기준으로 오프셋 계산할 때는 음수로 슬라이스
 
 >>>
 First four: ["a", "b", "c", "d"]
