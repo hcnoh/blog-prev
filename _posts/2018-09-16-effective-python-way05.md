@@ -17,7 +17,7 @@ twitter_text: '이펙티브 파이썬 스터디 WAY 05 정리'
 ## 슬라이싱의 기본 문법
 - 슬라이싱 문법의 기본 형태:
   - `some_list[start:end]`
-  - start 인덱스는 포함되고 end 인덱스는 제외
+  - `start 인덱스`는 포함되고 `end 인덱스`는 제외
 - 슬라이싱 예시:
 {% highlight python %}
 a = ["a", "b", "c", "d", "e", "f", "g", "h"]
