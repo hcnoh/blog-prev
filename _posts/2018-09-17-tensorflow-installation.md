@@ -8,7 +8,7 @@ tags:
 - python
 - tensorflow
 - virtualenv
-- 
+- ubuntu
 categories:
 - Development
 twitter_text: 'TensorFlow 설치'
