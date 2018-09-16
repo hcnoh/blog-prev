@@ -71,4 +71,4 @@ sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
 3. 호환성이 필요한 경우는 Jython/IronPython
 
 ## GIL이란? (멀티스레드?)
-- 추가 
+- 추가 예정
