@@ -11,7 +11,6 @@ categories:
 twitter_text: 'WAY 6. 한 슬라이스에 start, end, stride를 함께 쓰지 말자'
 ---
 
-# WAY 6. 한 슬라이스에 start, end, stride를 함께 쓰지 말자
 이전 장에서 기본 슬라이싱 문법을 정리했는데 파이썬에서는 추가적으로 매 n번째 아이템을 가져올 수 있는 stride 문법을 제공한다.
 
 ## stride 기본 문법
