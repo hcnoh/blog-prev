@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "이펙티브 파이썬 스터디 WAY 01 정리"
+title: "WAY 1. 사용중인 파이썬의 버전을 알자"
 date: 2018-09-09 20:3:59
 image: '/assets/img/'
 description: '이펙티브 파이썬 코딩의 기술 책 스터디 정리'
@@ -8,7 +8,7 @@ tags:
 - python
 categories:
 - 이펙티브 파이썬 스터디
-twitter_text: '이펙티브 파이썬 스터디 WAY 01 정리'
+twitter_text: 'WAY 1. 사용중인 파이썬의 버전을 알자'
 ---
 
 # WAY 1. 사용중인 파이썬의 버전을 알자
