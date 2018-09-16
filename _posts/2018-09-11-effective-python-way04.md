@@ -11,7 +11,6 @@ categories:
 twitter_text: 'WAY 4. 복잡한 표현식 대신 헬퍼 함수를 작성하자'
 ---
 
-## WAY 4. 복잡한 표현식 대신 헬퍼 함수를 작성하자
 다음 코드는 URL에서 쿼리 문자열을 디코드하는 스크립트이다.
 {% highlight python %}
 from urllib.parse import parse_qs
