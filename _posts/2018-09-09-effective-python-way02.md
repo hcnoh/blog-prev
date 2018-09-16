@@ -13,7 +13,7 @@ twitter_text: '이펙티브 파이썬 스터디 WAY 02 정리'
 # WAY 2. PEP 8 스타일 가이드를 따르자
 이번 포스팅은 다음의 링크를 참고하여 작성하였다.
 - [출처 1](https://hashcode.co.kr/questions/963/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%97%90%EC%84%9C-%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0%EB%8A%94-%ED%83%AD-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%A4%91-%EC%96%B4%EB%8A%90%EA%B1%B8%EB%A1%9C-%ED%95%98%EC%8B%9C%EB%82%98%EC%9A%94)
-- [출처 2](https://wikidocs.net/85)
+- [출처 2](http://paphopu.tistory.com/30)
 
 ## PEP 8이란?
 - 파이썬 개선 제안서 (Python Enhancement Proposal) #8
@@ -65,3 +65,27 @@ end
 - 모듈 임포트의 경우, 항상 모듈의 절대 이름을 사용하며 현재 모듈의 경로를 기준으로 상대 경로로 된 이름을 사용하지 않는다. 예를 들면 `bar` 패키지의 `foo` 모듈을 임포트하려면 그냥 `import foo`가 아니라 `from bar import foo`라고 해야 함
 - 상대적인 임포트를 해야 한다면 명시적인 구문을 이용하여 `from . import foo`라고 한다. (절대적 임포트 vs 상대적 임포트?)
 - 임포트는 섹션 순으로 구분해야 함 (표준 라이브러리 모듈 / 서드파티 모듈 / 자신이 만든 모듈), 섹션 내에서는 알파벳 순서로 임포트 (각각의 차이?)
+
+## 클래스 메서드와 인스턴스 메서드
+- 인스턴스 메서드:
+  - 클래스 내부에 정의되어 있는 함수를 호출할 때, 인스턴스를 필요로 한다는 조건
+  - 즉, 인스턴스 메서드는 호출하기 위해 인스턴스의 선언을 요구함
+  - 첫 번째 파라미터는 항상 self
+- 인스턴스 메서드 예제
+{% highlight python %}
+class InstMethod:
+
+    def __init__(self, name):
+        self.name = name
+    
+    def print_name(self):
+        print("my name is " + self.name)
+
+# 인스턴스 선언
+name_instance = InstMethod("hyungcheol_noh")
+
+# print_name이라는 함수를 호출하기 위해서는 name_instance처럼 인스턴스를 먼저 선언해야 함
+# 이것이 인스턴스 메서드
+name_instance.print_name()
+>>> my name is hyungcheol_noh
+{% endhighlight %}
