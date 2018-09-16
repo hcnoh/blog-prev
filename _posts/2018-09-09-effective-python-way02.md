@@ -54,6 +54,12 @@ a=b       # 틀린 예시
 - 긍정 표현식의 부정(if not a is b) 대신에 인라인 부정(if a is not b)
 - 길이를 확인(`if len(somelist) == 0`)하여 빈 값(`[]` 또는 `‘’`)을 확인하지 않는다. `If not somelist`를 사용하고, 빈 값은 암시적으로 `False`가 된다. 비어있지 않으면 `if somelist` 문이 암시적으로 `True`가 된다.
 - 한 줄로 된 `if` 문, `for`와 `while` 루프, `except` 복합문을 쓰지 않는다. 여러 줄로 나눠서 명료하게 작성
+{% highlight python %}
+for i in range(10): print("hello world")    # 틀린 예시
+for i in range(10):
+    print("hello world")                    # 
+end
+{% endhighlight %}
 - 항상 파일 맨 위에 `import` 문
 - 모듈 임포트의 경우, 항상 모듈의 절대 이름을 사용하며 현재 모듈의 경로를 기준으로 상대 경로로 된 이름을 사용하지 않는다. 예를 들면 `bar` 패키지의 `foo` 모듈을 임포트하려면 그냥 `import foo`가 아니라 `from bar import foo`라고 해야 함
 - 상대적인 임포트를 해야 한다면 명시적인 구문을 이용하여 `from . import foo`라고 한다. (절대적 임포트 vs 상대적 임포트?)
