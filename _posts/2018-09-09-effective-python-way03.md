@@ -101,3 +101,6 @@ with open("/tmp/random.bin", "wb) as f:
     f.write(os.urandom(10))
 {% endhighlight %}
 즉 위처럼 문자 쓰기 모드 `w`가 아니라 바이너리 쓰기 모드인 `wb`로 설정해주면 파이썬 2에서처럼 잘 동작한다는 것을 확인할 수 있다. 읽기 모드에서도 마찬가지로 `r`, `rb`가 사용된다.
+
+## 바이너리 vs 유니코드
+- 추가 예정
