@@ -10,7 +10,7 @@ categories:
 - 이펙티브 파이썬 스터디
 twitter_text: 'WAY 2. PEP 8 스타일 가이드를 따르자'
 ---
-# WAY 2. PEP 8 스타일 가이드를 따르자
+
 이번 포스팅은 다음의 링크를 참고하여 작성하였다.
 - [출처 1](https://hashcode.co.kr/questions/963/%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%97%90%EC%84%9C-%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0%EB%8A%94-%ED%83%AD-%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4-%EC%A4%91-%EC%96%B4%EB%8A%90%EA%B1%B8%EB%A1%9C-%ED%95%98%EC%8B%9C%EB%82%98%EC%9A%94)
 - [출처 2](http://paphopu.tistory.com/30)
