@@ -53,3 +53,23 @@ a = ["a", "b", "c", "d", "e", "f", "g", "h"]
 a[::2]    # ["a", "c", "e", "g"]
 a[::-2]   # ["h", "f", "d", "b"]
 {% endhighlight %}
+
+## start, end, stride를 함께 쓰면?
+- start, end, stride를 함께 쓰는 예시
+{% highlight python %}
+a = ["a", "b", "c", "d", "e", "f", "g", "h"]
+a[2::2]     # ["c", "e", "g"]
+a[-2::-2]   # ["g", "e", "c", "a"]
+a[-2:2:-2]  # ["g", "e"]
+a[2:2:-2]   # []
+{% endhighlight %}
+- start, end, stride를 함께 쓰면 매우 혼란스러움
+  - 가독성이 좋지 않기 때문에 각 인덱스가 어떤 작용을 하는지 확인이 어려움
+  - 특히 음수 stride의 경우 더욱 문제
+  - 셋은 함께 쓰지 않는 것이 좋음
+  - stride는 양수 값을 사용하는 것이 좋음
+- start, end, stride를 함께 써야하는 상황?
+  - stride를 먼저 적용하고 나머지 적용: shallow copy의 크기를 최소화하기 위해서
+- 내장 모듈 itertolls의 islice 메서드를 사용할 수 있음
+  - start, end, stride를 두 단계로 나눠서 실행할 시간 및 메모리가 충분하지 않은 경우 유용
+  - start, end, stride에 음수 값을 허용하지 않음
