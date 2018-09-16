@@ -17,7 +17,7 @@ twitter_text: '이펙티브 파이썬 스터디 WAY 01 정리'
 이번 포스팅은 다음의 링크를 참고하여 작성하였다.
 - [http://khanrc.tistory.com/entry/%EB%8B%A4%EC%96%91%ED%95%9C-Python%EB%93%A4#fnref-f1](http://khanrc.tistory.com/entry/%EB%8B%A4%EC%96%91%ED%95%9C-Python%EB%93%A4#fnref-f1)
 
-## 파이썬의 버전 확인:
+## 커맨드 라인 상에서 파이썬의 버전 확인:
 
 - 기본적으로 CPython 런타임 환경의 여러 버전이 미리 설치
 - 커맨드 라인 상에서 사용되는 기본 파이썬의 버전 확인: `--version` 플래그를 이용
@@ -33,9 +33,9 @@ Python 2.7.8
 Python 3.4.2
 {% endhighlight %}
 
-## 파이썬 내장 `sys` 모듈:
+## 파이썬 런타임 버전 확인:
 
-- 런타임에 사용중인 파이썬 버전 확인
+- 런타임에 사용중인 파이썬 버전 확인: 파이썬 내장 `sys` 모듈
 - 이것을 이용하여 런타임마다 모듈 임포트를 다르게 설정해줄 수 있음
 {% highlight python %}
 import sys
