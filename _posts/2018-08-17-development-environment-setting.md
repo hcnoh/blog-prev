@@ -8,6 +8,7 @@ tags:
 - vim
 - zshell
 - tmux
+- ubuntu
 categories:
 - Development
 twitter_text: 'Ubuntu 개발 환경 세팅'
