@@ -50,3 +50,21 @@ a[-3:]    # 제대로 동작
 assert a[-0:] == a[:]
 {% endhighlight %}
 
+## 리스트의 할당
+- 슬라이싱의 결과는 완전히 새로운 리스트
+{% highlight python %}
+a = ["a", "b", "c", "d", "e", "f", "g", "h"]
+b = a[4:]
+print("Before: ", a)
+print("Before: ", b)
+b[1] = 99
+print("After: ", a)
+print("After: ", b)
+
+>>>
+Before: ["a", "b", "c", "d", "e", "f", "g", "h"]
+Before: ["e", "f", "g", "h"]
+After: ["a", "b", "c", "d", "e", "f", "g", "h"]
+After: ["e", 99, "g", "h"]
+{% endhighlight %}
+
