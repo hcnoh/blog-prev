@@ -111,6 +111,7 @@ ClassMethod.print_name()
   - 클래스 네임스페이스 안에 저장
   - 클래스/인스턴스 모두를 통해서 호출이 가능
   - `@staticmethod` 데코레이터를 이용하여 선언
+- 스테이틱 메서드 
 {% highlight python %}
 class StaticMethod:
 
