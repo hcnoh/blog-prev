@@ -30,19 +30,17 @@ print(evens)
 ["b", "d", "f"]
 {% endhighlight %}
 - -1 stride
-  - 바이트 문자열, 아스키 문자에는 잘 동작
 {% highlight python %}
-x = b'abcde'
+x = b'abcde'    # 바이트 문자열, 아스키 문자에는 잘 동작
 y = x[::,-1]
 print(y)
 
 >>>
 b'edcba'
 {% endhighlight %}
-  - `utf-8` 바이트 문자열로 인코드된 유니코드 문자에서는 동작하지 않음
 {% highlight python %}
 w = '原原'
-x = w.encode("utf-8")
+x = w.encode("utf-8")   # `utf-8` 바이트 문자열로 인코드된 유니코드 문자에서는 동작하지 않음
 y = x[::-1]
 z = y.decode("utf-8")
 
