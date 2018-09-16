@@ -66,7 +66,7 @@ end
 - 상대적인 임포트를 해야 한다면 명시적인 구문을 이용하여 `from . import foo`라고 한다. (절대적 임포트 vs 상대적 임포트?)
 - 임포트는 섹션 순으로 구분해야 함 (표준 라이브러리 모듈 / 서드파티 모듈 / 자신이 만든 모듈), 섹션 내에서는 알파벳 순서로 임포트 (각각의 차이?)
 
-## 클래스 메서드와 인스턴스 메서드
+## 파이썬의 메서드 종류
 - 인스턴스 메서드:
   - 클래스 내부에 정의되어 있는 함수를 호출할 때, 인스턴스를 필요로 한다는 조건
   - 즉, 인스턴스 메서드는 호출하기 위해 인스턴스의 선언을 요구함
@@ -104,5 +104,26 @@ class ClassMethod:
 
 # 인스턴스를 따로 선언해줄 필요없이 함수를 호출할 수 있음
 ClassMethod.print_name()
+>>> my name is hyungcheol_noh
+{% endhighlight %}
+- 스테이틱 메서드
+  - 인스턴스나 클래스를 인자로 받지 않음
+  - 클래스 네임스페이스 안에 저장
+  - 클래스/인스턴스 모두를 통해서 호출이 가능
+  - `@staticmethod` 데코레이터를 이용하여 선언
+{% highlight python %}
+class StaticMethod:
+
+    @staticmethod
+    def print_name(name):
+        print("my name is " + name)
+
+# 클래스를 통해서 호출 가능
+StaticMethod.print_name("hyungcheol_noh")
+>>> my name is hyungcheol_noh
+
+# 인스턴스를 통해서도 호출이 가능
+me = StaticMethod()
+me.print_name("hyungcheol_noh")
 >>> my name is hyungcheol_noh
 {% endhighlight %}
