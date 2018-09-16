@@ -5,7 +5,9 @@ date: 2018-09-17 1:28:2
 image: '/assets/img/'
 description: 'Virtualenv를 이용하여 TensorFlow 설치하는 방법 정리'
 tags:
-- python, tensorflow, virtualenv
+- python
+- tensorflow
+- virtualenv
 categories:
 - Development
 twitter_text: 'TensorFlow 설치'
