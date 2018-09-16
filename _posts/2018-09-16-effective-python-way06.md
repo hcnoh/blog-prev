@@ -40,7 +40,7 @@ b'edcba'
 {% endhighlight %}
 {% highlight python %}
 w = '原原'
-x = w.encode("utf-8")   # `utf-8` 바이트 문자열로 인코드된 유니코드 문자에서는 동작하지 않음
+x = w.encode("utf-8")   # 'utf-8' 바이트 문자열로 인코드된 유니코드 문자에서는 동작하지 않음
 y = x[::-1]
 z = y.decode("utf-8")
 
