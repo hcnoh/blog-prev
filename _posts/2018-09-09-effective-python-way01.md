@@ -26,6 +26,7 @@ Python 2.7.8
 {% endhighlight %}
 파이썬 3는 보통 `python3`  명령을 사용한다.
 
+-
   - 파이썬 3
 {% highlight bash %}
 >>> python3 --version
