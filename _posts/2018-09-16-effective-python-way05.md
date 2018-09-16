@@ -30,3 +30,23 @@ First four: ["a", "b", "c", "d"]
 First four: ["e", "f", "g", "h"]
 Middle two: ["d", "e"]
 {% endhighlight %}
+
+## 슬라이싱 및 인덱싱 범위
+- 슬라이싱은 `start 인덱스`/`end 인덱스`가 경계를 벗어나도 적절히 처리
+{% highlight python %}
+first_twenty_items = a[:20]
+last_twenty_items = a[-20:]
+{% endhighlight %}
+- 인덱스 직접 접근은 경계를 벗어날 수 없음
+{% highlight python %}
+a[20]
+
+>>>
+IndexError: list index out of range
+{% endhighlight %}
+- 음수 인덱싱은 다음과 같은 주의사항이 있음
+{% highlight python %}
+a[-3:]    # 제대로 동작
+assert a[-0:] == a[:]
+{% endhighlight %}
+
