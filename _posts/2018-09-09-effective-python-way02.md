@@ -71,7 +71,7 @@ end
   - 클래스 내부에 정의되어 있는 함수를 호출할 때, 인스턴스를 필요로 한다는 조건
   - 즉, 인스턴스 메서드는 호출하기 위해 인스턴스의 선언을 요구함
   - 첫 번째 파라미터는 항상 self
-- 인스턴스 메서드 예제
+- 인스턴스 메서드 예제:
 {% highlight python %}
 class InstMethod:
 
@@ -106,12 +106,12 @@ class ClassMethod:
 ClassMethod.print_name()
 >>> my name is hyungcheol_noh
 {% endhighlight %}
-- 스테이틱 메서드
+- 스테이틱 메서드:
   - 인스턴스나 클래스를 인자로 받지 않음
   - 클래스 네임스페이스 안에 저장
   - 클래스/인스턴스 모두를 통해서 호출이 가능
   - `@staticmethod` 데코레이터를 이용하여 선언
-- 스테이틱 메서드 
+- 스테이틱 메서드 예제:
 {% highlight python %}
 class StaticMethod:
 
