@@ -85,10 +85,10 @@ After: ["a", "b", 99, 22, 14, "h"]
 - 원본 리스트의 복사
 {% highlight python %}
 b = a[:]
-assert b == a and b is not a
+assert b == a and b is not a    # 같은 내용을 담지만 다른 리스트 인스턴스
 {% endhighlight %}
 - 리스트의 할당
 {% endhighlight %}
 b = a
-assert a is b
+assert a is b                   # 같은 리스트 
 {% endhighlight %}
