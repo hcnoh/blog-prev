@@ -57,3 +57,26 @@ for sublist1 in my_lists:
     for sublist2 in sublist1:
         flat.extend(sublist2)
 {% endhighlight %}
+
+## 다중 if 조건문 포함
+- 예제
+{% highlight python %}
+a = [1, 2, 3, 4, 5, 6]
+b = [x for x in a if x > 4 if x % 2 == 0]
+c = [x for x in a if x > 4 and x % 2 == 0]
+{% endhighlight %}
+- 좀 더 복잡한 예제
+{% highlight python %}
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+filtered = [[x for x in row if x % 3 == 0]
+            for row in matrix if sum(row) >= 10]
+print(filtered)
+
+>>>
+[[6], [9]]
+{% endhighlight %}
+- 위의 예제는 매우 복잡함
+- 이런 식의 복잡한 리스트 컴프리헨션은 피하는 것이 좋음
+    - 가독성 문제
+    - 조건 두 개, 로프 두 개, 혹은 조건 한개 + 루프 한 개 정도가 적당함
+    - 더 복잡해지면 헬퍼 함수 활용 (WAY 16. 리스트를 반환하는 대신 제너레이터를 고려하자)
