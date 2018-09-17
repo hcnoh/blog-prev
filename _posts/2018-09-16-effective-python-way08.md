@@ -21,6 +21,14 @@ print(flat)
 >>>
 [1, 2, 3, 4, 5, 6]
 {% endhighlight %}
+- 위의 예제와 동치인 일반 루프문
+{% highlight python %}
+matrix = [[1, 2, 3], [4, 5, 6]]
+flat = []
+for row in matrix:
+    for x in row:
+        flat.append(x)
+{% endhighlight %}
 - 입력 리스트 레이아웃을 두 레벨로 중복하여 구성
 {% highlight python %}
 matrix = [[1, 2, 3], [4, 5, 6]]
