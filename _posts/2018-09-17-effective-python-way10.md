@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "WAY 10. range보다는 enumerate를 사용하자"
-date: 2018-09-16 20:51:23
+date: 2018-09-17 21:51:32
 image: '/assets/img/'
 description: '이펙티브 파이썬 코딩의 기술 책 스터디 정리'
 tags:
