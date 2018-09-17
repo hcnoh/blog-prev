@@ -45,3 +45,6 @@ for i, flavor in enumerate(flavor_list, 1)
 3: pecan
 4: strawberry
 {% endhighlight %}
+
+## 지연 제너레이터란?
+- 추가 예정
