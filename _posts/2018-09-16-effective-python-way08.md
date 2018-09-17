@@ -30,3 +30,22 @@ print(squared)
 >>>
 [[1, 4, 9], [16, 25, 36]]
 {% endhighlight %}
+
+## 여러 줄 짜리 리스트 컴프리헨션
+- 여러 줄의 리스트 컴프리헨션 예제
+{% highlight python %}
+my_lists = [
+    [[1, 2, 3], [4, 5, 6]],
+    # ...
+]
+flat = [x for sublist1 in my_lists
+        for sublist2 in sublist1
+        for x in sublist2]
+{% endhighlight %}
+- 위의 예제와 동치인 일반 루프문
+{% highlight python %}
+flat = []
+for sublist1 in my_lists:
+    for sublist2 in sublist1:
+        flat.extend(sublist2)
+{% endhighlight %}
