@@ -39,7 +39,7 @@ print(it)
 >>>
 <generator object <genexpr> at 0x101b81480>
 {% endhighlight %}
-- 필요한 경우 `next` 사용
+- 필요한 경우 `next` 사용: `next` 이후 이터레이터는 전진
 {% highlight python %}
 print(next(it))
 print(next(it))
@@ -48,3 +48,15 @@ print(next(it))
 100
 57
 {% endhighlight %}
+
+## 다른 제너레이터 표현식과 연계
+- 예제
+{% highlight python %}
+it = (len(x) for x in open("/tmp/my_file.txt"))
+roots = ((x, x**0.5) for x in it)
+print(next(roots))
+
+>>>
+(15, 3.872983346207417)
+{% endhighlight %}
+- 위의 예제에서 `roots`를 전진시키면 루프의 도미노 효과로 내부 이터레이터인 `it`도 함께 전진
