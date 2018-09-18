@@ -23,6 +23,9 @@ print(value)
 [100, 57, 15, 1, 12, 75, 5, 86, 89, 11]
 {% endhighlight %}
 - 위의 예제에서는 리스트 컴프리헨션으로 인하여 파일에 있는 각 줄의 길이만큼 메모리가 필요함
+  - 즉, 위의 예제에서 `value`를 생성할 때 차지하는 메모리를 정리하면:
+    - `open`으로 열었던 txt 파일
+    - `x in open()`으로 생성되는 소스 리스트 (value가 타겟 리스트)
   - 파일에 오류가 있거나 끊김이 없는 네트워크 소켓일 경우 문제가 발생
 
 ## 제너레이터 표현식
@@ -39,6 +42,7 @@ print(it)
 >>>
 <generator object <genexpr> at 0x101b81480>
 {% endhighlight %}
+- 위의 예제에서는 메모리에 `open`으로 열었던 txt 파일만이 올라감
 - 필요한 경우 `next` 사용: `next` 이후 이터레이터는 전진
 {% highlight python %}
 print(next(it))
