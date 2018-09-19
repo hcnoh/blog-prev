@@ -39,3 +39,13 @@ else:
 >>>
 For Else block!
 {% endhighlight %}
+- `while` 루프가 처음부터 거짓인 경우에도 실행
+{% highlight python %}
+while False:
+    print("Never runs")
+else:
+    print("While Else block!")
+
+>>>
+While Else block!
+{% endhighlight %}
