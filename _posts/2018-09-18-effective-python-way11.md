@@ -40,6 +40,9 @@ Cecilia
 - 따라서 전체 루프문이 별로 보기 안좋음
 - enumerate를 이용하면 약간 개선 가능
 {% highlight python %}
+names = ["Cecilia", "Lise", "Marie"]
+letters = [len(n) for n in names]
+
 for i, name in enumerate(names):
     count = letters[i]
     if count > max_letters:
@@ -49,3 +52,34 @@ for i, name in enumerate(names):
 
 ## zip을 이용한 예제
 - `zip`은 지연 제너레이터로 이터레이터 두 개 이상을 감싸안음
+- `zip`은 각 이터레이터들로부터 다음 값을 담은 튜플을 반환함
+- `zip`을 이용한 예제
+{% highlight python %}
+names = ["Cecilia", "Lise", "Marie"]
+letters = [len(n) for n in names]
+
+for name, count in zip(names, letters):
+    if count > max_letters:
+        longest_name = name
+        max_letters = count
+{% endhighlight %}
+
+## zip의 문제점
+- 파이썬2에서는 `zip`이 제너레이터가 아니라서 이터레이터를 완전히 순회하여 생성한 모든 튜플을 반환함
+    - 따라서 메모리 문제가 발생할 수 있음
+    - 메모리 문제로부터 자유롭기 위해서는 `izip`을 사용하여야 함
+- 입력 이터레이터들의 길이가 다르면 `zip`이 이상하게 동작함
+{% highlight python %}
+names = ["Cecilia", "Lise", "Marie", "Rosalind"]    # names와 letters의 길이가 다른 상황
+letters = [7, 4, 5]
+
+for name, count in zip(names, letters):
+    print(name)
+
+>>>
+Cecilia                                             # Rosalind의 결과는 출력되지 않음
+Lise
+Marie
+{% endhighlight %}
+    - 실행할 리스트의 길이가 같다고 확실한 수 있을 때만 `zip`을 사용
+    - 그렇지 않은 경우는 `itertools`의 `zip_longest`를 사용 (파이썬2는 `izip_longest`)
