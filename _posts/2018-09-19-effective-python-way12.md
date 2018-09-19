@@ -49,3 +49,31 @@ else:
 >>>
 While Else block!
 {% endhighlight %}
+
+## else 블록의 활용
+- 두 숫자가 서로소인지를 판별하는 코드
+{% highlight python %}
+a = 4
+b = 9
+for i in range(2, min(a, b) + 1):
+    print("Testing", i)
+    if a % i == 0 and b % i == 0:
+        print("Not coprime")
+        break
+else:
+    print("Coprime")
+
+>>>
+Testing 2
+Testing 3
+Testing 4
+Coprime
+{% endhighlight %}
+- 이런 방식을 추천하진 않음
+- 대신 두 가지 스타일의 헬퍼 함수를 사용하면 좋음
+
+## 첫 번째 스타일의 헬퍼 함수
+{% highlight python %}
+def coprime(a, b):
+{% endhighlight %}
+
