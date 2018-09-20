@@ -14,4 +14,4 @@ twitter_text: 'WAY 13. try/except/else/finally에서 각 블록의 장점을 이
 ## 파이썬 예외처리 과정
 - 4번의 구분되는 시점
   - `try`, `except`, `else`, `finally`
-- 각 블록들을 다양하게 조합하면 
+- 각 블록들을 다양하게 조합하면 유용
