@@ -73,7 +73,26 @@ Coprime
 - 대신 두 가지 스타일의 헬퍼 함수를 사용하면 좋음
 
 ## 첫 번째 스타일의 헬퍼 함수
+- 찾으려는 조건을 찾았을 때 바로 반환
+- 루프가 실패로 끝나면 기본 결과(`True`)를 반환
 {% highlight python %}
 def coprime(a, b):
+    for i in range(2, min(a, b) + 1):
+        if a % i == 0 and b % i == 0:
+            return False
+    return True
+{% endhighlight %}
+
+## 두 번째 스타일의 헬퍼 함수
+- 루프에서 찾으려는 대상을 찾았는지 알려주는 결과 변수 사용
+- 뭔가를 찾았으면 즉시 `break`로 루프를 중단
+{% highlight python %}
+def coprime(a, b):
+    is_coprime = True
+    for i in range(2, min(a, b) + 1):
+        if a % i == 0 and b % i == 0:
+            is_coprime = False
+            break
+    return is_coprime
 {% endhighlight %}
 
