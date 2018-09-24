@@ -123,7 +123,7 @@ print(a)
 10                # a는 수정되지 않음
 {% endhighlight %}
 - Shallow copy
-  - 단숫 객체 복제/shallow copy 차이점:
+  - 단숫 객체 복제/shallow copy의 차이점:
     - 복합 객체(`list`)는 별도 생성
     - 내용물은 원본 객체의 내용물을 참조
 {% highlight python %}
@@ -153,4 +153,21 @@ print(a)
 >>>
 [1, [1, 2, 3, 4]]
 [1, [1, 2, 3, 4]]       # c[1]은 mutable하기 때문에 원본/사본의 item이 같은 객체를 참조
+{% endhighlight %}
+- Deep copy
+  - `mutable`한 내부 객체의 shallow copy 문제를 해결
+  - 복합 객체(`list`) 및 내용물 전부 새로 생성
+{% highlight python %}
+import copy1
+a = [1, [1, 2, 3]]
+b = copy.deepcopy(a)    # deep copy
+print(b)
+b[0] = 10
+b[1].append(4)
+print(b)
+print(a)
+
+>>>
+[10, [1, 2, 3, 4]]
+[1, [1, 2, 3]]
 {% endhighlight %}
