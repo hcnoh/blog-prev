@@ -94,16 +94,20 @@ assert a is b                   # 같은 리스트
 
 ## Shallow copy / Deep copy
 - 단순 객체 복제
+  - `list`와 같은 `mutable` 객체는 원본/사본이 동일한 객체를 참조
+  - 숫자, 문자열 등의 `immutable` 객체는 원본/사본이 동일한 객체를 참조하지 않음
 {% highlight python %}
-a = [1, 2, 3, 4]
-b = a           # shallow copy
+a = [1, 2, 3, 4]  # list 객체 원본
+b = a             # list 객체 사본: 원본과 동일한 객체를 참조
 print(b)
-b[2] = 100      # b의 item 수정
+b[2] = 100        # b의 item 수정
 print(b)
 print(a)
 
 >>>
 [1, 2, 3, 4]
 [1, 2, 100, 4]
-[1, 2, 100, 4]  # a도 수정됨
+[1, 2, 100, 4]    # a도 수정됨
 {% endhighlight %}
+- Shallow copy
+
