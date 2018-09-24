@@ -139,7 +139,7 @@ print(a)
 >>>
 [1, [1, 2, 3]]
 [10, [1, 2, 3]]
-[1, [1, 2, 3]]
+[1, [1, 2, 3]]          # b[0]은 immutable하기 때문에 원본/사본의 item은 서로 다른 객체
 {% endhighlight %}
 {% highlight python %}
 import copy
@@ -152,5 +152,5 @@ print(a)
 
 >>>
 [1, [1, 2, 3, 4]]
-[1, [1, 2, 3, 4]]
+[1, [1, 2, 3, 4]]       # c[1]은 mutable하기 때문에 원본/사본의 item이 같은 객체를 
 {% endhighlight %}
