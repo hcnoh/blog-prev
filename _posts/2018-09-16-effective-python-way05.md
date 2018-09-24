@@ -109,5 +109,35 @@ print(a)
 [1, 2, 100, 4]
 [1, 2, 100, 4]    # a도 수정됨
 {% endhighlight %}
-- Shallow copy
+{% highlight python %}
+a = 10            # 숫자 객체 원본
+b = a             # 숫자 객체 사본: 원본과 동일한 객체를 참조하지 않음
+print(b)
+b = "abc"         # b를 수정
+print(b)
+print(a)
 
+>>>
+10
+"abc"
+10                # a는 수정되지 않음
+{% endhighlight %}
+- Shallow copy
+  - 단숫 객체 복제/shallow copy 차이점:
+    - 복합 객체(`list`)는 별도 생성
+    - 내용물은 원본 객체의 내용물을 참조
+{% highlight python %}
+import copy
+
+a = [1, [1, 2, 3]]
+b = copy.copy(a)        # shallow copy
+print(b)
+b[0] = 10
+print(b)
+print(a)
+
+>>>
+[1, [1, 2, 3]]
+[10, [1, 2, 3]]
+[1, [1, 2, 3]]
+{% endhighlight %}
