@@ -91,3 +91,19 @@ assert b == a and b is not a    # 같은 내용을 담지만 다른 리스트 �
 b = a
 assert a is b                   # 같은 리스트 
 {% endhighlight %}
+
+## Shallow copy / Deep copy
+- 단순 객체 복제
+{% highlight python %}
+a = [1, 2, 3, 4]
+b = a           # shallow copy
+print(b)
+b[2] = 100      # b의 item 수정
+print(b)
+print(a)
+
+>>>
+[1, 2, 3, 4]
+[1, 2, 100, 4]
+[1, 2, 100, 4]  # a도 수정됨
+{% endhighlight %}
