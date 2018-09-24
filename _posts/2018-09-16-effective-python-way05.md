@@ -141,3 +141,16 @@ print(a)
 [10, [1, 2, 3]]
 [1, [1, 2, 3]]
 {% endhighlight %}
+{% highlight python %}
+import copy
+
+a = [1, [1, 2, 3]]
+c = copy.copy(a)        # shallow copy
+c[1].append(4)          # list의 두 번째 item에 4를 추가
+print(c)
+print(a)
+
+>>>
+[1, [1, 2, 3, 4]]
+[1, [1, 2, 3, 4]]
+{% endhighlight %}
