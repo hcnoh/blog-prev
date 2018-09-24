@@ -81,12 +81,12 @@ print("After: ", a)
 Before: ["a", "b", "c", "d", "e", "f", "g", "h"]
 After: ["a", "b", 99, 22, 14, "h"]
 {% endhighlight %}
-- 원본 리스트의 복사:
+- 원본 리스트의 복사: Deep copy
 {% highlight python %}
 b = a[:]
 assert b == a and b is not a    # 같은 내용을 담지만 다른 리스트 인스턴스
 {% endhighlight %}
-- 리스트의 할당:
+- 리스트의 할당: Shallow copy
 {% highlight python %}
 b = a
 assert a is b                   # 같은 리스트 
