@@ -101,3 +101,11 @@ Traceback (most recent call last):      # 마지막 정보를 호출한 이후�
   File "<stdin>", line 1, in <module>
 StopIteration
 {% endhighlight %}
+- 제너레이터와 일반 함수의 차이점: `yield`
+{% highlight python %}
+def generator(n):
+    i = 0
+    while i < n:
+        yield i
+        i += 1
+{% endhighlight %}
