@@ -18,7 +18,8 @@ twitter_text: 'WAY 13. try/except/else/finally에서 각 블록의 장점을 이
 
 ## finally 블록
 - 예외는 전달하고 싶지만, 예외가 발생해도 정리 코드를 실행하고 싶을 때
-  - 사용 예시: 파일 핸들러를 제대로 종료하는 작업
+- `try` 블록이 예외를 일으키건 일으키지 않건 무조건 실행
+- 사용 예시: 파일 핸들러를 제대로 종료하는 작업
 {% highlight python %}
 handle = open("/tmp/random_data.txt") # IOError가 일어날 수 있음
 try:
