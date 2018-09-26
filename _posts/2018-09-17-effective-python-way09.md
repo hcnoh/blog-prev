@@ -102,10 +102,28 @@ Traceback (most recent call last):      # 마지막 정보를 호출한 이후�
 StopIteration
 {% endhighlight %}
 - 제너레이터와 일반 함수의 차이점: `yield`
+  - 제너레이터 함수가 실행 중 `yield`를 만나면 반환 값을 `next()`를 호출한 쪽으로 전달
+  - 이후 해당 함수는 일반 함수처럼 종료되지 않고 그 상태로 메모리에 유지됨
 {% highlight python %}
 def generator(n):
     i = 0
     while i < n:
         yield i
         i += 1
+
+for x in generator(5):
+    print x
+
+>>>
+0
+1
+2
+3
+4
 {% endhighlight %}
+- 위 구문이 실행되는 순서:
+  1. `for` 문이 실행되며, 먼저 generator 함수가 호출
+  2. generator 함수는 일반 함수와 동일한 절차로 실행
+  3. `whille loop` 내부에서 `yield`를 만나면 `return`과 비슷하게 함수를 호출했던 `for` 문으로 값 반환
+  4. 반환 이후에 일반 함수와는 다르게 generator 함수가 종료되지 않고 그대로 유지됨
+  5. `for loop`이 돌면서 다시 generator 함수를 호출하면 `yield` 이후 구문부터 시작됨
