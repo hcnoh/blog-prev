@@ -15,6 +15,7 @@ twitter_text: 'WAY 5. 시퀀스를 슬라이스하는 방법을 알자'
 
 이번 포스팅은 다음의 링크를 참조하였다.
 - [출처1](https://blueshw.github.io/2016/01/20/2016-01-20-shallow-copy-deep-copy/)
+- [출처2](https://wikidocs.net/16038)
 
 ## 슬라이싱의 기본 문법
 - 슬라이싱 문법의 기본 형태:
@@ -158,6 +159,12 @@ print(a)
 >>>
 [1, [1, 2, 3, 4]]
 [1, [1, 2, 3, 4]]       # c[1]은 mutable하기 때문에 원본/사본의 item이 같은 객체를 참조
+{% endhighlight %}
+{% highlight python %}
+a = [[1, 2], [3, 4]]
+b = a[:]
+assert a is not b
+assert a[0] is b[0]
 {% endhighlight %}
 - Deep copy
   - `mutable`한 내부 객체의 shallow copy 문제를 해결
