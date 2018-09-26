@@ -22,6 +22,7 @@ def divide(a, b):
         return None
 {% endhighlight %}
 - 이 경우 0으로 나누는 경우에는 결과가 정의되어 있지 않기 때문에 `None`을 반환하는 것이 자연스러워 보임
+{% highlight python %}
 result = divide(x, y)
 if result is None:
     print("Invalid inputs")
