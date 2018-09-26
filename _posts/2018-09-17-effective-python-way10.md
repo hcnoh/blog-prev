@@ -25,7 +25,7 @@ for i in range(len(flavor_list)):
 ## enumerate란?
 - 지연 제너레이터(lazy generator)로 이터레이터를 감싸안음
 - 이 제너레이터는 루프 인덱스와 다음 값을 한 쌍으로 가져와 넘겨줌
-- enumerate 예제
+- `enumerate` 예제
 {% highlight python %}
 for i, flavor in enumerate(flavor_list)
     print("%d: %s" % (i + 1, flavor))
@@ -35,7 +35,7 @@ for i, flavor in enumerate(flavor_list)
 3: pecan
 4: strawberry
 {% endhighlight %}
-- enumerate로 세기 시작할 숫자를 지정할 수도 있음
+- `enumerate`로 세기 시작할 숫자를 지정할 수도 있음
 {% highlight python %}
 for i, flavor in enumerate(flavor_list, 1)
     print("%d: %s" % (i, flavor))
