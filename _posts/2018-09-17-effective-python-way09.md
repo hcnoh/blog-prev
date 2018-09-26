@@ -73,4 +73,7 @@ print(next(roots))
 ## 제너레이터란?
 - 이터레이터를 생성해주는 함수
   - 이터레이터는 `next()` 메서드를 이용하여 데이터에 순차적으로 접근이 가능한 객체
-  - `iterable`: 멤버를 하나씩 차례로 반환이 가능한 객체, `list`, `str`, `tuple`이 대표적인 예시
+  - `iterable`: 멤버를 하나씩 차례로 반환이 가능한 객체
+    - `list`, `str`, `tuple`이 대표적인 예시
+    - `__iter__()` 또는 `__getitem__()` 메서드로 정의된 class
+    - `for loop` 또는 `zip()`, `map()`과 같이 sequential한 특징을 필요로 하는 작업에 유용하게 사용됨
