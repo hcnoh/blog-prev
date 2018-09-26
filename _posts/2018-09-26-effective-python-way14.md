@@ -43,6 +43,7 @@ if not result:
 1. 반환 값을 두 개로 나눠서 튜플에 담는 방법
     - 튜플의 첫 번째 부분은 작업의 성공 유무를 알려줌
     - 튜플의 두 번째 부분은 계산된 실제 결과
+    - 하지만 여전히 잘못된 사용을 할 가능성이 존재
 {% highlight python %}
 def divide(a, b):
     try:
@@ -53,5 +54,30 @@ def divide(a, b):
 success, result = divide(x, y)
 if not success:
     print("Invalid inputs")
+
+# 잘못된 사용
+_, result = divide(x, y)
+if not result:
+    print("Invalid inputs")
+{% endhighlight %}
+2. `None`을 반환하지 않는 방법
+    - 호출하는 쪽에 예외를 일으켜서 예외 처리
+{% highlight python %}
+def divide(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError as e:
+        raise ValueError("Invalid inputs") from e
+
+x, y = 5, 2
+try:
+    result = divide(x, y)
+except VallueError:
+    print("Invalid inputs")
+else:
+    print("Result is %.1f" % result)
+
+>>>
+Result is 2.5
 {% endhighlight %}
 
