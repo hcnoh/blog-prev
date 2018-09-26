@@ -40,7 +40,7 @@ if not result:
 - 이러한 점들이 함수에서 `None`을 반환하면 오류가 일어나기 쉬운 이유
 
 ## None으로 인한 오류를 줄이는 방법
-1. 반환 값을 두 개로 나눠서 튜플에 담는 방법
+- 반환 값을 두 개로 나눠서 튜플에 담는 방법
     - 튜플의 첫 번째 부분은 작업의 성공 유무를 알려줌
     - 튜플의 두 번째 부분은 계산된 실제 결과
     - 하지만 여전히 잘못된 사용을 할 가능성이 존재
@@ -60,7 +60,7 @@ _, result = divide(x, y)
 if not result:
     print("Invalid inputs")
 {% endhighlight %}
-2. `None`을 반환하지 않는 방법
+- `None`을 반환하지 않는 방법
     - 호출하는 쪽에 예외를 일으켜서 예외 처리
 {% highlight python %}
 def divide(a, b):
