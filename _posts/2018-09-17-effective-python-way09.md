@@ -77,3 +77,7 @@ print(next(roots))
     - `list`, `str`, `tuple`이 대표적인 예시
     - `__iter__()` 또는 `__getitem__()` 메서드로 정의된 class
     - `for loop` 또는 `zip()`, `map()`과 같이 sequential한 특징을 필요로 하는 작업에 유용하게 사용됨
+  - `iterable`한 객체가 모두 이터레이터는 아님
+    - `list` 객체는 `next()` 메서드를 가지고 있지 않음: 이터레이터가 아님
+    - `for` 문을 사용하여 `list` 객체에 순차적으로 접근하는 경우는 파이썬 내부에서 임시로 `list`를 `iterator`로 자동으로 변환
+    - `iter()` 함수를 이용하여 `list` 객체를 `listiterator` 타입으로 변경 가능
