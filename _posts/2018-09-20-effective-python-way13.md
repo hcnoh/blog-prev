@@ -31,6 +31,17 @@ finally:
 - 파일을 열 때 일어나는 예외는 `finally` 블록에서 처리하지 않아야 하므로 `try` 블록 앞에서 `open`을 호출해야 함
 
 ## else 블록
-- 어떤 예외를 처리하고 어떤 예외를 전달할지를 명확하게 하고 싶을 때
+- 어떤 예외를 처리하고 어떤 예외를 전달할지를 명확하게 하고 싶을 때: `try`/`except`/`else`를 사용
 - `try` 블록이 예외를 일으키지 않으면 `else` 블록이 실행
+- `else` 블록을 사용하면 `try` 블록의 코드를 최소로 줄이고 가독성을 높일 수 있음
+- 문자열에서 `JSON` 딕셔너리 데이터를 로드하여 그 안에 든 키 값을 반환하는 예제
+{% highlight python %}
+def load_json_key(data, key):
+    try:
+        result_dict = json.loads(data)    # ValueError가 일어날 수 있음
+    except ValueError as e:
+        raise KeyError from e
+    else:
+        return result_dict[key]           # KeyError가 일어날 수 있음
+{% endhighlight %}
 
