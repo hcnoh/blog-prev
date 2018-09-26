@@ -11,6 +11,9 @@ categories:
 twitter_text: 'WAY 9. 컴프리헨션이 클 때는 제너레이터 표현식을 고려하자'
 ---
 
+이번 포스팅은 다음의 링크를 참조하였다.
+- [출처1](http://bluese05.tistory.com/m/56)
+
 ## 리스트 컴프리헨션의 문제점
 - 입력 시퀀스에 있는 각 값 별로 아이템을 하나씩 담은 새 리스트를 통째로 생성한다는 점
 - 따라서 메모리를 많이 소모할 수 있음
@@ -127,3 +130,58 @@ for x in generator(5):
   3. `whille loop` 내부에서 `yield`를 만나면 `return`과 비슷하게 함수를 호출했던 `for` 문으로 값 반환
   4. 반환 이후에 일반 함수와는 다르게 generator 함수가 종료되지 않고 그대로 유지됨
   5. `for loop`이 돌면서 다시 generator 함수를 호출하면 `yield` 이후 구문부터 시작됨
+
+## 지연 제너레이터란?
+- 제너레이터 표현식을 통한 Lazy evaluation 효과 기능
+  - 계산 결과 값이 필요할 때까지 계산을 늦추는 효과
+- `sleep_func()` 예제
+{% highlight python %}
+import time
+
+def sleep_func(x):
+    print ("sleep")
+    time.sleep(1)
+    return x
+{% endhighlight %}
+- 리스트 컴프리헨셩릉 이용하여 `sleep_func()`을 수행하는 경우
+  - 리스트 컴프리헨션을 수행하는 경우 `sleep_func()`을 `range()` 값 만큼 한번에 수행
+  - 만약 `sleep_func()`에서 수행하는 시간이 길거나 `list` 값이 매우 큰 경우 수행할 때 부담
+{% highlight python %}
+l = [sleep_func(x) for x in range(5)]
+
+for i in l:
+    print(i)
+
+>>>
+sleep
+sleep
+sleep
+sleep
+sleep
+0
+1
+2
+3
+4
+{% endhighlight %}
+- 제너레이터를 이용하여 `sleep_func()`을 수행하는 경우
+  - 제너레이터는 실제 값을 로딩하지 않고 `for` 문이 수행될 때 하나씩 `sleep_func()`을 수행하며 값을 반환
+  - 수행 시간이 긴 연산을 필요한 순간까지 늦출 수 있다는 점
+{% highlight python %}
+gen = (sleep_func(x) for x in range(5))
+
+for i in gen:
+    print(i)
+
+>>>
+sleep
+0
+sleep
+1
+sleep
+2
+sleep
+3
+sleep
+4
+{% endhighlight %}
