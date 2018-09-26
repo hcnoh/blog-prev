@@ -53,7 +53,8 @@ assert a[-0:] == a[:]
 {% endhighlight %}
 
 ## 리스트의 할당
-- 슬라이싱의 결과는 완전히 새로운 리스트: Deep copy
+- 슬라이싱의 결과는 완전히 새로운 리스트:
+  - 주의) 슬라이싱은 Deep copy처럼 보이지만 사실은 Shallow copy
 {% highlight python %}
 a = ["a", "b", "c", "d", "e", "f", "g", "h"]
 b = a[4:]
