@@ -27,5 +27,31 @@ result = divide(x, y)
 if result is None:
     print("Invalid inputs")
 {% endhighlight %}
-- 하지만 분자가 0이되면 문제가 발생: 반환 값도 0이 되어버리기 때문
+- 하지만 분자가 0이되면 문제가 발생
+    - 반환 값도 0이 되어버리기 때문
+    - `if` 문과 같은 조건에서 결과를 평가할 때 문제가 될 수 있음
+    - 아래 예제처럼 오류인지 확인하기 위해 `None` 대신 실수로 `False`에 해당하는 값을 검사할 수도 있음
+{% highlight python %}
+x, y = 0, 5
+result = divide(x, y)
+if not result:
+    print("Invalid inputs")
+{% endhighlight %}
+- 이러한 점들이 함수에서 `None`을 반환하면 오류가 일어나기 쉬운 이유
+
+## None으로 인한 오류를 줄이는 방법
+1. 반환 값을 두 개로 나눠서 튜플에 담는 방법
+    - 튜플의 첫 번째 부분은 작업의 성공 유무를 알려줌
+    - 튜플의 두 번째 부분은 계산된 실제 결과
+{% highlight python %}
+def divide(a, b):
+    try:
+        return True, a / b
+    except ZeroDivisionError:
+        return False, None
+
+success, result = divide(x, y)
+if not success:
+    print("Invalid inputs")
+{% endhighlight %}
 
