@@ -81,3 +81,23 @@ print(next(roots))
     - `list` 객체는 `next()` 메서드를 가지고 있지 않음: 이터레이터가 아님
     - `for` 문을 사용하여 `list` 객체에 순차적으로 접근하는 경우는 파이썬 내부에서 임시로 `list`를 `iterator`로 자동으로 변환
     - `iter()` 함수를 이용하여 `list` 객체를 `listiterator` 타입으로 변경 가능
+{% highlight python %}
+x = [1, 2, 3]
+y = iter(x)
+print(type(x))
+print(type(y))
+print(next(y))
+print(next(y))
+print(next(y))
+print(next(y))
+
+>>>
+<type 'list'>
+<type 'listiterator'>
+1
+2
+3
+Traceback (most recent call last):      # 마지막 정보를 호출한 이후에 next()를 호출하면 StopIteration 이라는 exception이 발생
+  File "<stdin>", line 1, in <module>
+StopIteration
+{% endhighlight %}
