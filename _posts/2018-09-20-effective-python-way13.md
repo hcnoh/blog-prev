@@ -45,3 +45,27 @@ def load_json_key(data, key):
         return result_dict[key]           # KeyError가 일어날 수 있음
 {% endhighlight %}
 
+## 모두 함께 사용하기
+- 복합문 하나로 모든 것을 처리하고 싶다면 `try`/`except`/`else`/`finally`를 사용
+- 파일에서 수행할 작업 설명을 읽고 처리한 후 즉석에서 파일을 업데이트하는 예제
+{% highlight python %}
+UNDEFINED = object()
+
+def divide_json(path):
+    handle = open(path, "r+")                         # IOError가 일어날 수 있음
+    try:                                              # try 블록은 파일을 읽고 처리하는 데 사용
+        data = handle.read()                          # UnicodeDecodeError가 일어날 수 있음
+        op = json.loads(data)                         # ValueError가 일어날 수 있음
+        value = (op["numerator"]/op["denominator"])   # ZeroDivisionError가 일어날 수 있음
+    except ZeroDivisionError as e:                    # except 블록은 try 블록에서 일어난 예외를 처리하는 데 사용
+        return UNDEFINED
+    else:                                             # else 블록은 파일을 즉석에서 업데이트하고 이와 관련된 예외가 전달되게 하는 데 사용
+        op["result"] = value
+        result = json.dumps(op)
+        handle.seek(0)
+        handle.write(result)                          # IOError가 일어날 수 있음
+        return value
+    finally:                                          # finally 블록은 파일 핸들을 정리하는 데 사용
+        handle.close()                                # 항상 실행됨
+{% endhighlight %}
+
