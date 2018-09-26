@@ -27,3 +27,5 @@ result = divide(x, y)
 if result is None:
     print("Invalid inputs")
 {% endhighlight %}
+- 하지만 분자가 0이되면 문제가 발생: 반환 값도 0이 되어버리기 때문
+
