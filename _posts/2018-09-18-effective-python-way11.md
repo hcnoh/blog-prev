@@ -83,3 +83,20 @@ Marie
 {% endhighlight %}
 - 실행할 리스트의 길이가 같다고 확실한 수 있을 때만 `zip`을 사용
 - 그렇지 않은 경우는 `itertools`의 `zip_longest`를 사용 (파이썬2는 `izip_longest`)
+- `zip_longest` 예제
+{% highlight python %}
+from itertools import zip_longest
+
+x = [1, 2, 3]
+y = [4, 5, 6, 7]
+
+zipped = zip_longest(x, y)
+print(list(zipped))
+
+zipped = zip_longest(x, y, fillvalue=0)     # fillvalue 인자에 값을 지정
+print(list(zipped))
+
+>>>
+[(1, 4), (2, 5), (3, 6), (None, 7)]
+[(1, 4), (2, 5), (3, 6), (0, 7)]
+{% endhighlight %}
