@@ -31,3 +31,19 @@ print(result[:3])
 {% endhighlight %}
 - 위 예제의 문제점
   - 코드가 복잡하고 깔끔하지 않음
+  - 제너레이터를 사용하여 더 좋은 코드를 구현할 수 있음
+
+## 제너레이터란?
+- `yield` 표현식을 사용하는 함수
+- 호출되면 실제로 실행하지 않고 바로 이터레이터를 반환
+- 내장 함수 `next`를 호출할 때마다 이터레이터는 제너레이터가 다음 `yield` 표현식으로 진행하게 함
+- 위의 예시를 제너레이터를 이용하여 수정
+{% highlight python %}
+def index_words_iter(text):
+    if text:
+        yield 0
+    for index, letter in enumerate(text):
+        if letter == " ":
+            yield index + 1
+{% endhighlight %}
+- 결과 리스트와 연동하는 부분이 모두 사라져서 훨씬 이해하기 쉬움
