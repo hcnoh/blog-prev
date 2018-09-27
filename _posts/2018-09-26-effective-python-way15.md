@@ -137,5 +137,6 @@ def sort_priority(numbers, group):
     numbers.sort(key=helper)
     return found[0]
 {% endhighlight %}
-- `found`가 `mutable`한 리스트:
+- `found`가 `mutable`한 리스트임
 - 따라서 클로저에서 일단 `found`를 받아온 후에는 내부 스코프에서 `found[0]=True`로 `found`의 상태를 바꿔서 데이터를 보낼 수 있음
+- 리스트가 아니라 다른 `mutable`한 객체 또는 클래스를 활용할 수 있음(딕셔너리 또는 셋)
