@@ -47,3 +47,7 @@ def index_words_iter(text):
             yield index + 1
 {% endhighlight %}
 - 결과 리스트와 연동하는 부분이 모두 사라져서 훨씬 이해하기 쉬움
+- 제너레이터 호출로 반환되는 이터레이터를 내장 함수 `list`에 전달: 손쉽게 리스트로 변환 가능
+{% highlight python %}
+result = list(index_words_iter(address))
+{% endhighlight %}
