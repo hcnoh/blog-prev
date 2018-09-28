@@ -58,6 +58,20 @@ Requirement already up-to-date: pip in ./tensorflow/lib/python3.5/site-packages 
 >>> python -c "import tensorflow as tf; print(tf.__version__)"
 1.10.0
 {% endhighlight %}
+`pip show` 명령을 통해서도 버전을 확인할 수 있다.
+{% highlight bash %}
+>>> pip show tensorflow-gpu
+Name: tensorflow-gpu
+Version: 1.10.0
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: opensource@google.com
+License: Apache 2.0
+Location: /home/hcnoh/wavenet-venv/lib/python3.5/site-packages
+Requires: tensorboard, grpcio, setuptools, protobuf, six, gast, termcolor, wheel, numpy, absl-py, astor
+Required-by:
+{% endhighlight %}
 1.10.0 버전이 무사히 설치된 것을 확인할 수 있다.
 
 ## 가상환경 빠져나오기
