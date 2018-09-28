@@ -124,7 +124,7 @@ print(percentages)
 - 결국 `__iter__` 메서드를 제너레이터로 구현하면 이렇게 동작하게 구현이 가능
 - 다음은 여행자 데이터를 담은 파일을 읽는 이터러블 컨테이너 클래스
 {% highlight python %}
-class ReadVisits(object):
+class ReadVisits(object):               # 이 클래스의 구현 방식이 이터레이터 프로토콜
     def __init__(self, data_path):
         self.data_path = data_path
     
@@ -133,7 +133,7 @@ class ReadVisits(object):
             for line in f:
                 yield int(line)
 
-def normalize(numbers):         # 원래 함수에 수정을 가하지 않고 넘겨도 제대로 동작
+def normalize(numbers):                 # 원래 함수에 수정을 가하지 않고 넘겨도 제대로 동작
     total = sum(numbers)
     result = []
     for value in numbers:
@@ -149,3 +149,32 @@ print(percentages)
 >>>
 [11.538461538461538, 26.923076923076923, 61.53846153846154]
 {% endhighlight %}
+- 이 코드가 동작하는 이유:
+    - `normalize`의 `sum` 메서드가 새 이터레이터 객체를 할당하려고 `ReadVisits.__iter__`를 호출하기 때문
+    - 숫자를 정규화하는 `for` 루프도 두 번째 이터레이터 객체를 할당할 때 `__iter__`를 호출함
+    - 두 이터레이터는 독립적으로 동작: 각각의 순회 과정에서 모든 입력 데이터 값을 얻을 수 있음
+    - 유일한 단점: 입력 데이터를 여러 번 읽는다는 점
+- 위의 예제에 파라미터가 단순한 이터레이터가 아님을 보장하는 함수를 작성해야 함
+    - 내장함수 `iter`에 이터레이터를 넘기면: 이터레이터 자체 반환
+    - 내장함수 `iter`에 컨테이너 타입을 넘기면: 매번 새 이터레이터 객체가 반환
+{% highlight python %}
+def normalize_defensive(numbers):
+    if iter(number) is iter(numbers):       # 이터레이터는 거부하는 조건
+        raise TypeError("Must supply a container")
+    total = sum(numbers)
+    result = []
+    for value in numbers:
+        percent = 100 * value / total
+        result.append(percent)
+    return result
+
+path = "/tmp/my_numbers.txt"
+visits = [15, 35, 80]
+normalize_defensive(visits)     # 오류 없음
+visits = ReadVisits(path)
+normalize_defensive(visits)     # 오류 없음
+it = iter(visits)
+normalize_defensive(it)         # 오류 발생: iterable하더라도 컨테이너가 아니기 때문
+{% endhighlight %}
+- `list`와 `ReadVisits`은 컨테이너이므로 입력으로 잘 동작
+- 그 외 이터레이터 프로토콜을 따르는 어떤 컨테이너 타입에 대해서도 잘 동작
