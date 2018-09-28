@@ -35,9 +35,9 @@ print(percentages)
     - 이 작업을 수행하는 제너레이터를 정의
 {% highlight python %}
 def normalize(numbers):
-    total = sum(numbers)
+    total = sum(numbers)                    # 이터레이터 한 번 소모
     result = []
-    for value in numbers:
+    for value in numbers:                   # 이미 순회가 끝난 이터레이터는 순회를 해도 결과가 나오지 않음
         percent = 100 * value / total
         result.append(percent)
     return result
@@ -94,3 +94,22 @@ print(percentages)
 >>>
 [11.538461538461538, 26.923076923076923, 61.53846153846154]
 {% endhighlight %}
+- 위의 예제는 이터레이터를 리스트로 복사하는 과정에서 메모리 소모가 클 수 있음
+- 메모리 문제를 피하는 방법은 호출할 때마다 새 이터레이터를 반환하는 함수를 받게 하는 것
+{% highlight python %}
+def normalize_func(get_iter):
+    total = sum(get_iter())         # 새 이터레이터
+    result = []
+    for value in get_iter():
+        percent = 100 * value / total
+        result.append(percent)
+    return result
+
+percentages = normalize_func(lambda: read_visits(path))     # 제너레이터를 호출하여 매번 새 이터레이터를 생성하는 람다 표현식을 넘겨줌
+print(percentages)
+
+>>>
+[11.538461538461538, 26.923076923076923, 61.53846153846154]
+{% endhighlight %}
+- 위의 예제도 잘 돌아가기는 하지만 람다 함수를 넘겨주는 방법은 세련되지 못함
+- 같은 결과를 얻을 수 있는 더 좋은 방법: 이터레이터 프로토콜을 구현한 새 컨테이너 클래스를 제공하는 것
