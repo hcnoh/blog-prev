@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TensorFlow 설치"
+title: "TensorFlow 설치 방법 정리"
 date: 2018-09-17 1:28:2
 image: '/assets/img/'
 description: 'Virtualenv를 이용하여 TensorFlow 설치하는 방법 정리'
@@ -10,8 +10,8 @@ tags:
 - virtualenv
 - ubuntu
 categories:
-- Development
-twitter_text: 'TensorFlow 설치'
+- TensorFlow
+twitter_text: 'TensorFlow 설치 방법 정리'
 ---
 
 Tmux 및 zshell, vim까지 세팅이 대충 끝나고 이제는 TensorFlow를 설치하여 작업 환경 구축을 마무리할 생각이다. TensorFlow는 여러 가상환경 위에서 설치하는 것을 제공하지만 여기서는 Virtualenv를 이용한 가상환경 위에서 설치하는 방법을 정리하였다.
