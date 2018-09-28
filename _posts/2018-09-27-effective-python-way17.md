@@ -34,6 +34,14 @@ print(percentages)
 - 리스트를 확대하려면 텍사스주의 모든 도시가 들어 있는 파일에서 데이터를 읽어야 함:
     - 이 작업을 수행하는 제너레이터를 정의
 {% highlight python %}
+def normalize(numbers):
+    total = sum(numbers)
+    result = []
+    for value in numbers:
+        percent = 100 * value / total
+        result.append(percent)
+    return result
+    
 def read_visits(data_path):
     with open(data_path) as f:
         for line in f:
@@ -73,4 +81,16 @@ def normalize_copy(numbers):
         percent = 100 * value / total
         result.append(percent)
     return result
+
+def read_visits(data_path):
+    with open(data_path) as f:
+        for line in f:
+            yield int(line)
+
+it = read_visits("/tmp/my_numbers.txt")
+percentages = normalize(it)
+print(percentages)
+
+>>>
+[11.538461538461538, 26.923076923076923, 61.53846153846154]
 {% endhighlight %}
