@@ -38,4 +38,39 @@ def read_visits(data_path):
     with open(data_path) as f:
         for line in f:
             yield int(line)
+
+it = read_visits("/tmp/my_numbers.txt")
+percentages = normalize(it)
+print(percentages)
+
+>>>
+[]
+{% endhighlight %}
+- 위의 예제에서 제너레이터의 반환 값에 `normalize`를 호출하면 아무 결과도 생성되지 않음
+    - 이터레이터가 결과를 한 번만 생성하기 때문
+    - 이미 `StopIteration` 예외를 일으킨 이터레이터나 제너레이터를 순회하면 어떤 결과도 얻을 수 없음
+{% highlight python %}
+it = read_visits("/tmp/my_numbers.txt")
+print(list(it))
+print(list(it))     # 이미 소진함
+
+>>>
+[15, 35, 80]
+[]
+{% endhighlight %}
+- 이미 소진한 이터레이터를 순회하더라도 오류가 일어나지는 않음
+- 많은 함수들이 결과가 없는 이터레이터와 결과가 있었지만 이미 소진한 이터레이터의 차이를 알려주지 않음
+
+## 문제점 해결
+- 입력 이터레이터를 명시적으로 소진하고 전체 콘텐츠의 복사본을 리스트에 저장하여 해결 가능
+- 위의 예제와 동일하지만 입력 이터레이터를 방어적으로 복사하는 함수 예제
+{% highlight python %}
+def normalize_copy(numbers):
+    numbers = list(numbers)     # 이터레이터를 복사
+    total = sum(numbers)
+    result = []
+    for value in numbers:
+        percent = 100 * value / total
+        result.append(percent)
+    return result
 {% endhighlight %}
