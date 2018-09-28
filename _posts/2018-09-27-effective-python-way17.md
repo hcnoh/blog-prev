@@ -120,4 +120,32 @@ print(percentages)
     - `iter()` 함수: `iterable`하지만 이터레이터는 아닌 `list`를 `listiterator` 타입으로 변경하는 함수
     - `iter(foo)`를 호출하면 특별한 메서드인 `foo.__iter__`를 호출
     - `__iter__` 메서드: (`__next__`라는 특별한 메서드를 구현하는) 이터레이터를 반환
-    - 마지막으로 `for` 루프는 이터레이터를 모두 소진할 때까지 (`StopIteration` 예외를 일으킬 때까지) 이터레이터 객체의 내장 함수 `next`를 계속 
+    - 마지막으로 `for` 루프는 이터레이터를 모두 소진할 때까지 (`StopIteration` 예외를 일으킬 때까지) 이터레이터 객체의 내장 함수 `next`를 계속 호출
+- 결국 `__iter__` 메서드를 제너레이터로 구현하면 이렇게 동작하게 구현이 가능
+- 다음은 여행자 데이터를 담은 파일을 읽는 이터러블 컨테이너 클래스
+{% highlight python %}
+class ReadVisits(object):
+    def __init__(self, data_path):
+        self.data_path = data_path
+    
+    def __iter__(self):
+        with open(self.data_path) as f:
+            for line in f:
+                yield int(line)
+
+def normalize(numbers):         # 원래 함수에 수정을 가하지 않고 넘겨도 제대로 동작
+    total = sum(numbers)
+    result = []
+    for value in numbers:
+        percent = 100 * value / total
+        result.append(percent)
+    return result
+
+path = "/tmp/my_numbers.txt"
+visits = ReadVisits(path)
+percentages = normalize(visits)
+print(percentages)
+
+>>>
+[11.538461538461538, 26.923076923076923, 61.53846153846154]
+{% endhighlight %}
