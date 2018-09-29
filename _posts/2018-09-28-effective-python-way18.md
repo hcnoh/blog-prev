@@ -44,4 +44,18 @@ log("Hi there")             # 호출하는 쪽만 수정
 My numbers are: 1, 2
 Hi there
 {% endhighlight %}
+- `*` 연산자를 이용하여 리스트를 입력으로 사용할 수 있음
+def log(message, *values):  # 첫 번째 파라미터인 message는 필수, 그 다음에 나오는 위치 인수는 몇 개든 선택적임
+    if not values:
+        print(message)
+    else:
+        value_str = ", ".join(str(x) for x in values)
+        print("%s: %s" % (message, values_str))
+
+favorites = [7, 33, 99]
+log("Favorite colors", *favorites)
+
+>>>
+Favorite colors: 7, 33, 99
+{% endhighlight %}
 
