@@ -21,7 +21,24 @@ def log(message, values):
         print("%s: %s" % (message, values_str))
 
 log("My numbers are", [1, 2])
-log("Hi there", [])
+log("Hi there", [])             # 빈 리스트를 넘겨야 하는 것이 불편함
+
+>>>
+My numbers are: 1, 2
+Hi there
+{% endhighlight %}
+- 로그로 남길 값이 없을 때 빈 리스트를 넘겨야 하는 것이 불편함:
+    - `*` 기호를 마지막 위치 파라미터 이름 앞에 붙이면 것으로 해결 가능
+{% highlight python %}
+def log(message, *values):  # 첫 번째 파라미터인 message는 필수, 그 다음에 나오는 위치 인수는 몇 개든 선택적임
+    if not values:
+        print(message)
+    else:
+        value_str = ", ".join(str(x) for x in values)
+        print("%s: %s" % (message, values_str))
+
+log("My numbers are", 1, 2)
+log("Hi there")             # 호출하는 쪽만 수정
 
 >>>
 My numbers are: 1, 2
