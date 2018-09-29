@@ -11,7 +11,7 @@ categories:
 twitter_text: 'WAY 18. 가변 위치 인수로 깔끔하게 보이게 하자'
 ---
 
-## 디버그 정보 몇 개를 로그로 남기는 예제
+## 가변 개수의 위치 인수를 받는 예제
 {% highlight python %}
 def log(message, values):
     if not values:
@@ -58,5 +58,25 @@ log("Favorite colors", *favorites)
 
 >>>
 Favorite colors: 7, 33, 99
+{% endhighlight %}
+
+## 가변 개수의 위치 인수를 받는 방법의 문제점
+- 가변 인수가 함수에 전달되기에 앞서 항상 튜플로 변환된다는 점
+    - 함수를 호출하는 쪽에서 제너레이터에 * 연산자를 쓰면 제너레이터가 모두 소진할 때까지 순회됨
+    - 결과로 만들어지는 튜플은 제너레이터로부터 생성되는 모든 값을 담게 됨
+    - 따라서 메모리 문제가 발생할 수 있음
+{% highlight python %}
+def my_generator():
+    for i in range(10):
+        yield i
+
+def my_func(*args):
+    print(args)
+
+it = my_generator()     # 제너레이터 생성
+my_func(*it)            # 제너레이터를 모두 순회하며 생성되는 값들이 전부 튜플로 변환: 메모리 문제 발생 가능
+
+>>>
+(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 {% endhighlight %}
 
