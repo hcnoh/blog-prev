@@ -35,3 +35,20 @@ remainder(20, number=7)
 >>>
 SytaxError: remainder() got multiple values for argument "number"
 {% endhighlight %}
+
+## 키워드 인수의 유연성의 이점
+- 코드를 처음 보는 사람이 함수 호출을 더 명확하게 이해할 수 있다는 점
+- 함수를 정의할 때 기본 값을 설정할 수 있다는 점
+    - 큰 통에 들어가는 액체의 유속을 계산하는 예제
+{% highlight python %}
+def flow_rate(weight_diff, time_diff):
+    return weight_diff / time_diff
+
+weight_diff = 0.5
+time_diff = 3
+flow = flow_rate(weight_diff, time_diff)
+print("%.3f kg per second" % flow)
+
+>>>
+0.167 kg per second
+{% endhighlight %}
