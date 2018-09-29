@@ -45,6 +45,7 @@ My numbers are: 1, 2
 Hi there
 {% endhighlight %}
 - `*` 연산자를 이용하여 리스트를 입력으로 사용할 수 있음
+{% highlight python %}
 def log(message, *values):  # 첫 번째 파라미터인 message는 필수, 그 다음에 나오는 위치 인수는 몇 개든 선택적임
     if not values:
         print(message)
