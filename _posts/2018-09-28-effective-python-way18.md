@@ -79,4 +79,20 @@ my_func(*it)            # 제너레이터를 모두 순회하며 생성되는 �
 >>>
 (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 {% endhighlight %}
+- 호출 코드를 모두 변경하지 않고서는 새 위치 인수를 추가할 수 없는 점
+    - 인수 리스트의 앞쪽에 위치 인수를 추가하면 기존의 호출 코드가 수정 없이는 이상하게 동작함
+{% highlight python %}
+def log(sequence, message, *values):
+    if not values:
+        print("%s: %s" % (sequence, message))
+    else:
+        values_str = ", ".join(str(x) for x in values)
+        print("%s: %s: %s" % (sequence, message, values_str))
+log(1, "Favorites", 7, 33)      # 새로운 용법은 OK
+log("Favorite numbers", 7, 33)  # 오래된 용법은 제대로 동작하지 않음
+
+>>>
+1: Favorites: 7, 33
+Favorite numbers: 7: 33
+{% endhighlight %}
 
