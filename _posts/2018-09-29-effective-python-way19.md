@@ -52,3 +52,16 @@ print("%.3f kg per second" % flow)
 >>>
 0.167 kg per second
 {% endhighlight %}
+- 보통은 초당 킬로그램 단위로 유속을 아는게 좋음
+- 하지만 더 큰 시간 단위로 계산하는 게 좋을 떄도 있음
+- 기간 환산 계수를 추가
+{% highlight python %}
+def flow_rate(weight_diff, time_diff, period):
+    return (weight_diff / time_diff) * period
+{% endhighlight %}
+- 위 경우 항상 `period`를 설정해줘야 한다는 단점이 있음
+    - 기본값을 설정하여 더 깔끔하게 해결 가능
+{% highlight python %}
+def flow_rate(weight_diff, time_diff, period=1):
+    return (weight_diff / time_diff) * period
+{% endhighlight %}
