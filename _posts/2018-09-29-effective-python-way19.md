@@ -66,3 +66,21 @@ def flow_rate(weight_diff, time_diff, period=1):
     return (weight_diff / time_diff) * period
 {% endhighlight %}
 - `period`가 선택적인 인수가 되었음
+- 키워드 인수의 세 번째 이점은 기존 호출 코드와 호환성을 유지하면서도 함수의 파라미터를 확장할 수 있다는 점
+    - 킬로그램 단위는 물론 다른 무게 단위로도 유속을 계산하려고 앞의 예제를 확장
+{% highlight python %}
+def flow_rate(weight_diff, time_diff, period=1, units_per_kg=1):
+    return ((weight_diff / units_per_kg) / time_diff) * period
+
+pounds_per_hour = flow_rate(weight_diff, time_diff, period=3600, units_per_kg=2.2)
+{% endhighlight %}
+- 이 방법의 유일한 문제점:
+    - 선택적인 키워드 인수(`period`, `units_per_kg`)를 여전히 위치 인수로도 넘길 수 있다는 점
+{% highlight python %}
+def flow_rate(weight_diff, time_diff, period=1, units_per_kg=1):
+    return ((weight_diff / units_per_kg) / time_diff) * period
+
+pounds_per_hour = flow_rate(weight_diff, time_diff, 3600, 2.2)
+{% endhighlight %}
+- 위와 이 한다면 혼동을 일으킬 수 있음:
+    - 항상 키워드 이름으로 선택적인 인수를 지정하고 위치 인수로는 아예 넘기지 않아야 함
