@@ -65,3 +65,4 @@ def flow_rate(weight_diff, time_diff, period):
 def flow_rate(weight_diff, time_diff, period=1):
     return (weight_diff / time_diff) * period
 {% endhighlight %}
+- `period`가 선택적인 인수가 되었음
